@@ -201,6 +201,10 @@ img {
   border-style: none;
 }
 
+.masthead-avatar {
+  border-radius: 50%;
+}
+
 svg {
   overflow: hidden;
   vertical-align: middle;
