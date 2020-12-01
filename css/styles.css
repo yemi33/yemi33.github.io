@@ -2440,15 +2440,28 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-.btn-primary {
+#github-button {
   color: #fff;
   background-color: #1abc9c;
   border-color: #1abc9c;
 }
+
+#github-button:hover {
+  color: #fff;
+  background-color: #198b75;
+  border-color: #198b75;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+}
+
 .btn-primary:hover {
   color: #fff;
-  background-color: #159a80;
-  border-color: #148f77;
+  background-color: #1d2731;
+  border-color: #1d2731;
 }
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
@@ -2834,6 +2847,7 @@ fieldset:disabled a.btn {
   color: #f8f9fa;
   border-color: #f8f9fa;
 }
+
 .btn-outline-light:hover {
   color: #212529;
   background-color: #f8f9fa;
@@ -10148,7 +10162,7 @@ h3 {
   position: relative;
   display: block;
   max-width: 25rem;
-  border-radius: 0.5rem;
+  border-radius: 3rem;
   overflow: hidden;
 }
 .portfolio .portfolio-item .portfolio-item-caption {
@@ -10242,4 +10256,12 @@ form .row:first-child .floating-label-form-group {
 
 .copyright {
   background-color: #1a252f;
+}
+
+#motto {
+  color: #1a252f;
+}
+
+#intro {
+  align-items: center;
 }
