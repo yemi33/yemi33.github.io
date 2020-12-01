@@ -101,5 +101,5 @@ function successfulSend(){
     // );
     // $("#success > .alert-success").append("</div>");
     //clear all fields
-    $("#contactForm").trigger("reset");
+    $("#contactFormNew").trigger("reset");
 }
