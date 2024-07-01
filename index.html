@@ -30,8 +30,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                                href="#experience">Experience</a></li>
                         <li class="nav-item mx-0 mx-lg-1 dropdown">
-                            <a class="nav-link py-3 px-0 px-lg-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            <a class="nav-link py-3 px-0 px-lg-3 dropdown-toggle rounded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
                                 Portfolio
                             </a>
@@ -43,10 +47,6 @@
                                 <li><a class="dropdown-item" href="#other-projects">Other Projects</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                                href="#experience">Experience</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                                href="#about">About</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                                 href="#contact">Contact</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
@@ -60,7 +60,7 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/portfolio/yemi.jpg" alt="" />
+                <img class="masthead-avatar mb-5" src="assets/img/portfolio/yemi3.png" alt="" />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">Yemi Shin</h1>
                 <!-- Icon Divider-->
@@ -70,10 +70,79 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Aspiring Software Engineer - A Daughter - A Friend</p>
-                <p class="masthead-subheading font-weight-light mb-0" id="motto">Bug Motto: If you stare at it long enough, you will fix it.</p>
+                <p class="masthead-subheading font-weight-light mb-0">Software Engineer - A Daughter - A Friend</p>
+                <p class="masthead-subheading font-weight-light mb-0" id="motto">Motto: I can do anything I set my mind to.</p>
             </div>
         </header>
+
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <p class="masthead-subheading font-weight-light mb-0 ml-5 mr-5" id="intro">I'm a software engineer at Microsoft working on the Android app for M365's latest app, Loop. I am passionate about creating great apps and bringing value to customers.</p>
+                    <!-- <div class="col-lg-4 ml-auto"><p class="lead" id="intro">I'm a junior Computer Science major at Carleton College who is passionate about making the world a fun and playful place for everybody.</p></div> -->
+                </div>
+                <!-- About Section Button-->
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="assets/img/Yemi's Resume.pdf">
+                        <i class="fas fa-download mr-2"></i>
+                        Yemi's Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section-->
+        <section class="page-section portfolio" id="experience">
+            <div class="container">
+            <div class="row justify-content-center">
+                <!-- Experience Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Work Experience</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Experience Item 1-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#experienceModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>Microsoft</small></div>
+                        </div>
+                        <img class="mx-auto d-block" src="assets/img/portfolio/microsoft2.png" alt=""/>
+                    </div>
+                </div>
+                <!-- Experience Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#experienceModal2">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>WAVES @ DevoLab Michigan State University</small></div>
+                        </div>
+                        <img class="mx-auto d-block" src="assets/img/portfolio/avida.png" alt=""/>
+                    </div>
+                </div>
+                <!-- Experience Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#experienceModal3">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>GeoComm Inc.</small></div>
+                        </div>
+                        <img class="mx-auto d-block" src="assets/img/portfolio/geocomm.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
 
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio">
@@ -199,75 +268,6 @@
                             <img class="img-fluid" src="assets/img/portfolio/math.png" alt="" />
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section-->
-        <section class="page-section portfolio" id="experience">
-            <div class="container">
-            <div class="row justify-content-center">
-                <!-- Experience Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Work Experience</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Experience Item 1-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#experienceModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>WAVES @ DevoLab Michigan State University</small></div>
-                        </div>
-                        <img class="mx-auto d-block" src="assets/img/portfolio/avida.png" alt=""/>
-                    </div>
-                </div>
-                <!-- Experience Item 2-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#experienceModal2">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>GeoComm Inc.</small></div>
-                        </div>
-                        <img class="mx-auto d-block" src="assets/img/portfolio/geocomm.png" alt=""/>
-                    </div>
-                </div>
-                <!-- Experience Item 3-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#experienceModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>Comida for Familias Inc.</small></div>
-                        </div>
-                        <img class="mx-auto d-block" src="assets/img/portfolio/cff.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
-
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <p class="masthead-subheading font-weight-light mb-0 ml-5 mr-5" id="intro">I'm a senior Computer Science major at Carleton College (graduating Spring 2022) who is passionate about making the world a fun and playful place for everybody.</p>
-                    <!-- <div class="col-lg-4 ml-auto"><p class="lead" id="intro">I'm a junior Computer Science major at Carleton College who is passionate about making the world a fun and playful place for everybody.</p></div> -->
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="assets/img/Yemi's Resume.pdf">
-                        <i class="fas fa-download mr-2"></i>
-                        Yemi's Resume
-                    </a>
                 </div>
             </div>
         </section>
@@ -771,7 +771,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="experienceModal1Label">Software Developer</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="experienceModal1Label">Software Engineer</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -779,16 +779,12 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/avida.png" alt="" />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/loop.png" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Worked on Avida-ED 4, an educational software used to study evolution, as part of WAVES workshop at Michigan State University.</p>
-                                    <button class="btn btn-primary mb-2" id="github-button" onclick=" window.open('https://github.com/yemi33/Avida-ED-Eco', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See on GitHub
-                                    </button>
-                                    <button class="btn btn-primary mb-2" id="github-button" onclick=" window.open('https://yemi33.github.io/avida-ed-presentation/#0', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See Poster Presentation at BEACON Congress for Evolutionary Biology
+                                    <p class="mb-5">Implemented various UX in the Android app including notifications UI, in app purchase flow, deeplinking, etc. Followed best Modern Android Development (MAD) practices including Jetpack Compose, Kotlin Coroutines, and Compose Navigation. > 50k users and growing.</p>
+                                    <button class="btn btn-primary mb-2" id="github-button" onclick=" window.open('https://play.google.com/store/apps/details?id=com.microsoft.loop', '_blank')">
+                                        <i class="fa-brands fa-android"></i>
+                                        See on Google Play
                                     </button>
                                     <button class="btn btn-primary mb-2" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
@@ -813,7 +809,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="experienceModal2Label">Software Development Intern</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="experienceModal2Label">Software Developer</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -821,10 +817,18 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/geocomm.png" alt="" />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/avida.png" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Worked on automating the Indoor Mapping procedure, using machine learning with Python, C#, and AWS SageMaker.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
+                                    <p class="mb-5">Worked on Avida-ED 4, an educational software used to study evolution, as part of WAVES workshop at Michigan State University.</p>
+                                    <button class="btn btn-primary mb-2" id="github-button" onclick=" window.open('https://github.com/yemi33/Avida-ED-Eco', '_blank')">
+                                        <i class="fab fa-github"></i>
+                                        See on GitHub
+                                    </button>
+                                    <button class="btn btn-primary mb-2" id="github-button" onclick=" window.open('https://avida-ed.msu.edu/app4/', '_blank')">
+                                        <i class="fa-solid fa-globe"></i>
+                                        See App
+                                    </button>
+                                    <button class="btn btn-primary mb-2" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
                                     </button>
@@ -847,7 +851,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="experienceModal3Label">Software Engineer Volunteer</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="experienceModal3Label">Software Development Intern</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -855,9 +859,9 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cff.png" alt="" />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/geocomm.png" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Developed company's internal crowdfunding website to help volunteers easily fund their technical projects.</p>
+                                    <p class="mb-5">Worked on automating the Indoor Mapping procedure, using machine learning with Python, C#, and AWS SageMaker.</p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
