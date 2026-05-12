@@ -1,1 +1,281 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Minions &mdash; Multi-Agent AI Dev Team</title><meta name="description" content="Five autonomous coding agents, one engine, and one dashboard. Minions orchestrates Claude or GitHub Copilot agents to plan, implement, review, verify, and ship code."><style>  :root { --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #c9d1d9; --muted: #8b949e; --blue: #58a6ff; --green: #3fb950; --yellow: #d29922; --red: #f85149; --purple: #bc8cff; }  * { margin: 0; padding: 0; box-sizing: border-box; }  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }  /* Hero */  .hero { text-align: center; padding: 80px 20px 60px; }  .hero h1 { font-size: 3.5em; color: var(--blue); margin-bottom: 12px; letter-spacing: -1px; }  .hero h1 span { color: var(--text); }  .hero .tagline { font-size: 1.3em; color: var(--muted); max-width: 600px; margin: 0 auto 32px; }  .hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }  .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid var(--border); background: var(--surface); }  .hero-badge.green { color: var(--green); border-color: rgba(63,185,80,0.3); }  .hero-badge.blue { color: var(--blue); border-color: rgba(88,166,255,0.3); }  .hero-badge.yellow { color: var(--yellow); border-color: rgba(210,153,34,0.3); }  .hero-badge.purple { color: var(--purple); border-color: rgba(188,140,255,0.3); }  .cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }  .cta a { padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.2s; }  .cta-primary { background: var(--blue); color: var(--bg); }  .cta-primary:hover { background: #79c0ff; }  .cta-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }  .cta-secondary:hover { border-color: var(--blue); color: var(--blue); }  /* Container */  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }  /* Agents strip */  .agents-strip { display: flex; justify-content: center; gap: 24px; padding: 40px 20px; flex-wrap: wrap; }  .agent-pill { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }  .agent-pill .emoji { font-size: 1.4em; }  .agent-pill .name { font-weight: 700; color: var(--text); font-size: 14px; }  .agent-pill .role { color: var(--muted); font-size: 12px; }  /* Features grid */  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; padding: 40px 0; }  .feature { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }  .feature h3 { color: var(--blue); font-size: 1em; margin-bottom: 6px; }  .feature p { color: var(--muted); font-size: 13px; line-height: 1.5; }  /* Scenario sections */  .scenario { margin: 60px 0; }  .scenario-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }  .scenario-num { background: var(--blue); color: var(--bg); font-weight: 700; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }  .scenario h2 { font-size: 1.5em; color: #f0f6fc; }  .scenario > p { color: var(--muted); margin-bottom: 16px; max-width: 800px; font-size: 15px; }  .demo-frame { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }  .demo-frame img { width: 100%; display: block; }  .demo-caption { background: var(--surface); padding: 10px 18px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }  /* Inline badges */  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }  .badge-green { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }  .badge-blue { background: rgba(88,166,255,0.15); color: var(--blue); border: 1px solid rgba(88,166,255,0.3); }  .badge-yellow { background: rgba(210,153,34,0.15); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }  .badge-red { background: rgba(248,81,73,0.15); color: var(--red); border: 1px solid rgba(248,81,73,0.3); }  .hl { color: var(--green); font-weight: 600; }  /* Quick start */  .quickstart { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 32px; margin: 60px 0; }  .quickstart h2 { color: var(--blue); margin-bottom: 16px; }  .quickstart pre { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; overflow-x: auto; font-size: 14px; line-height: 1.8; color: var(--green); }  .quickstart pre .comment { color: var(--muted); }  /* Architecture */  .arch { text-align: center; padding: 60px 0; }  .arch h2 { color: var(--blue); margin-bottom: 20px; }  .arch pre { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; display: inline-block; text-align: left; font-size: 13px; color: var(--muted); line-height: 1.7; }  /* Footer */  footer { text-align: center; color: #484f58; padding: 40px 0; border-top: 1px solid #21262d; margin-top: 80px; font-size: 13px; }  footer a { color: var(--blue); text-decoration: none; }</style></head><body><!-- Hero --><div class="hero">  <h1>Minions <span>Mission Control</span></h1>  <p class="tagline">Five autonomous coding agents, one engine, one dashboard. Plan, implement, review, verify, and ship code with human control at every gate.</p>  <div class="hero-badges">    <span class="hero-badge green">Node.js 18+</span>    <span class="hero-badge blue">Claude or Copilot</span>    <span class="hero-badge yellow">Multi-Project</span>    <span class="hero-badge purple">Dashboard + CLI</span>  </div>  <div class="cta">    <a href="https://www.npmjs.com/package/@yemi33/minions" class="cta-primary">Install from npm</a>    <a href="#quickstart" class="cta-secondary">Quick Start</a>  </div></div><!-- Agent strip --><div class="agents-strip">  <div class="agent-pill"><span class="emoji">&#x1F3D7;&#xFE0F;</span><div><div class="name">Ripley</div><div class="role">Lead / Explorer</div></div></div>  <div class="agent-pill"><span class="emoji">&#x1F527;</span><div><div class="name">Dallas</div><div class="role">Engineer</div></div></div>  <div class="agent-pill"><span class="emoji">&#x1F4CA;</span><div><div class="name">Lambert</div><div class="role">Analyst</div></div></div>  <div class="agent-pill"><span class="emoji">&#x1F9E0;</span><div><div class="name">Rebecca</div><div class="role">Architect</div></div></div>  <div class="agent-pill"><span class="emoji">&#x2699;&#xFE0F;</span><div><div class="name">Ralph</div><div class="role">Engineer</div></div></div></div><!-- Features --><div class="container"><div class="features">  <div class="feature"><h3>Autonomous Dispatch</h3><p>Engine discovers work from plans, PRs, schedules, pipelines, and queues &mdash; then routes to the right agent by role, skill, and availability.</p></div>  <div class="feature"><h3>Plan Lifecycle</h3><p>Plan &rarr; Approve &rarr; PRD &rarr; Execute &rarr; Review &rarr; Verify. Completed plans stay available until you manually archive them.</p></div>  <div class="feature"><h3>Team Meetings</h3><p>Multi-agent meetings with investigate, debate, and conclude rounds. Agents research, discuss, and produce actionable conclusions.</p></div>  <div class="feature"><h3>Multi-Stage Pipelines</h3><p>Chain tasks, meetings, plans, and more into automated workflows. Cron triggers or manual. Artifacts flow between stages.</p></div>  <div class="feature"><h3>Review / Fix Loop</h3><p>After implementation, Minions can dispatch reviews, react to human PR comments, and send fixes back to the original author agent.</p></div>  <div class="feature"><h3>Git Worktree Isolation</h3><p>Each agent works in its own worktree. No conflicts, no cross-contamination, safe parallel execution.</p></div>  <div class="feature"><h3>Knowledge Consolidation</h3><p>Agent findings, quick notes, pinned notes, and feedback consolidate into team notes and a categorized knowledge base.</p></div>  <div class="feature"><h3>PR Integration</h3><p>Tracks Azure DevOps and GitHub PRs, including review votes, build status, merge status, human comments, and context-only links.</p></div>  <div class="feature"><h3>Scheduled Tasks &amp; Watches</h3><p>Cron-style recurring work plus watches for PRs, work items, dispatches, meetings, pipelines, agents, and status changes.</p></div>  <div class="feature"><h3>Command Center &amp; Doc Chat</h3><p>Natural language orchestration, persistent CC tabs, document Q&amp;A/editing, issue filing, routing updates, and local API actions.</p></div>  <div class="feature"><h3>Pluggable Runtimes</h3><p>Run agents through Claude Code or GitHub Copilot CLI, with runtime-specific models, effort, session resume, and permission handling.</p></div>  <div class="feature"><h3>Live Dashboard</h3><p>Real-time mission control on port 7331 with paginated views, optimistic updates, live streams, metrics, and settings.</p></div>  <div class="feature"><h3>One-Command Updates</h3><p><code>minions update</code> pulls the latest npm package, reapplies files, and restarts while preserving config and customizations.</p></div></div><!-- Demo scenarios --><div class="scenario">  <div class="scenario-header"><div class="scenario-num">1</div><h2>Dashboard Overview</h2></div>  <p>Home page with agent status cards, project bar, setup guidance, and engine state. All agents visible at a glance.</p>  <div class="demo-frame">    <img src="demo/01-dashboard-overview.png" alt="Dashboard overview with agent cards">    <div class="demo-caption">Home page showing Minions Members, project bar, and engine status badge</div>  </div></div><div class="scenario">  <div class="scenario-header"><div class="scenario-num">2</div><h2>Work Items</h2></div>  <p>Paginated table with status, type, priority, agent, dependencies, artifacts, and linked PRs. <span class="badge badge-yellow">PENDING</span> <span class="badge badge-blue">DISPATCHED</span> <span class="badge badge-green">DONE</span> <span class="badge badge-red">FAILED</span>. Retry, delete, archive, and add feedback with optimistic updates.</p>  <div class="demo-frame">    <img src="demo/02-work-items.png" alt="Work items table">    <div class="demo-caption">Work items page &mdash; 20 per page with create, edit, retry, and delete actions</div>  </div></div><div class="scenario">  <div class="scenario-header"><div class="scenario-num">3</div><h2>Plans &amp; PRD</h2></div>  <p>Plan cards with Approve / Discuss &amp; Revise / Reject. PRD dependency graph with per-item retry, reopening, verification, and manual archive.</p>  <div class="demo-frame">    <img src="demo/03-plans-prd.png" alt="Plans and PRD progress">    <div class="demo-caption">Plans page with status-colored cards, PRD dependency graph, and action buttons</div>  </div></div><div class="scenario">  <div class="scenario-header"><div class="scenario-num">4</div><h2>Pull Requests</h2></div>  <p>PR tracker sorted by date, with review, build, merge, conflict, and human-comment status. Linked to work items and PRD items. Manual PR linking and context-only observation supported.</p>  <div class="demo-frame">    <img src="demo/04-pull-requests.png" alt="Pull requests tracker">    <div class="demo-caption">PRs sorted newest-first with build status, review status, and agent attribution</div>  </div></div><div class="scenario">  <div class="scenario-header"><div class="scenario-num">5</div><h2>Team Meetings</h2></div>  <p>Multi-agent meetings with 3 rounds: investigate, debate, conclude. Live progress per participant. Create plans from conclusions.</p>  <div class="demo-frame">    <img src="demo/05-meetings.png" alt="Meetings page">    <div class="demo-caption">Meetings with round status badges, participant progress, and archive/delete actions</div>  </div></div><div class="scenario">  <div class="scenario-header"><div class="scenario-num">6</div><h2>Pipelines</h2></div>  <p>Multi-stage workflows chaining tasks, meetings, plans, tests, docs, and more. Cron triggers or manual runs. Artifact tracking between stages.</p>  <div class="demo-frame">    <img src="demo/06-pipelines.png" alt="Pipelines page">    <div class="demo-caption">Pipeline cards with stage flow visualization, run history, and progress bars</div>  </div></div><div class="scenario">  <div class="scenario-header"><div class="scenario-num">7</div><h2>Notes &amp; Knowledge Base</h2></div>  <p>Inbox for agent findings, quick notes, pinned notes, consolidated team notes, and categorized knowledge base. Inline Q&amp;A/editing on documents.</p>  <div class="demo-frame">    <img src="demo/07-notes-kb.png" alt="Notes and knowledge base">    <div class="demo-caption">Notes inbox, team notes, and knowledge base with category tabs and pagination</div>  </div></div><div class="scenario">  <div class="scenario-header"><div class="scenario-num">8</div><h2>Scheduled Tasks</h2></div>  <p>Cron-style recurring work with a visual builder. Schedule work items, tests, docs, plans, asks, meetings, and recurring maintenance.</p>  <div class="demo-frame">    <img src="demo/08-schedules.png" alt="Schedules page">    <div class="demo-caption">Schedule list with cron expressions, last-run times, and enable/disable toggles</div>  </div></div><div class="scenario">  <div class="scenario-header"><div class="scenario-num">9</div><h2>Engine &amp; Metrics</h2></div>  <p>Dispatch queue, engine log, agent metrics, token usage, runtime/model data, quality signals, and context pressure. All paginated.</p>  <div class="demo-frame">    <img src="demo/09-engine.png" alt="Engine page">    <div class="demo-caption">Active/pending dispatches, completed history, engine log, and per-agent quality metrics</div>  </div></div><div class="scenario">  <div class="scenario-header"><div class="scenario-num">10</div><h2>Command Center</h2></div>  <p>Natural language delegation. CC orchestrates &mdash; agents implement. Sessions persist across refreshes and tabs; actions can create work, notes, plans, watches, PR links, and issues.</p>  <div class="demo-frame">    <img src="demo/10-command-center.png" alt="Command Center panel">    <div class="demo-caption">Command Center side panel with conversation history, action execution, and session indicator</div>  </div></div><!-- Quick Start --><div class="quickstart" id="quickstart">  <h2>Quick Start</h2>  <pre><span class="comment"># Prerequisites: Node.js 18+, Git, and at least one agent runtime</span><span class="comment"># Install Claude Code or GitHub Copilot CLI separately, then install Minions</span>npm install -g @yemi33/minions<span class="comment"># Bootstrap ~/.minions/ and scan/link repositories</span>minions init<span class="comment"># Or add a specific project later</span>minions add ~/my-project<span class="comment"># Start engine + dashboard, then open http://localhost:7331</span>minions restart --openminions dash<span class="comment"># Give your first task</span>minions work "Explore the codebase and document the architecture"<span class="comment"># Useful operations</span>minions statusminions doctorminions config set-cli copilot --model gpt-5.4<span class="comment"># Update to latest</span>minions update</pre></div><!-- Architecture --><div class="arch">  <h2>Architecture</h2>  <pre>  ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ  Γöé                  ~/.minions/ (central hub)           Γöé  Γöé                                                     Γöé  Γöé   engine.js ΓöÇΓöÇΓöÇΓöÇ 60s tick loop ΓöÇΓöÇΓöÇΓöÇΓöÉ                Γöé  Γöé       Γöé                            Γöé                Γöé  Γöé   discover work    spawn agents    poll PRs/comments Γöé  Γöé       Γöé                Γöé              Γöé             Γöé  Γöé   ΓöîΓöÇΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÉ    ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ   ΓöîΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÉ         Γöé  Γöé   Γöé Plans Γöé    Γöé  Worktrees  Γöé   Γöé ADO  Γöé         Γöé  Γöé   Γöé PRDs  Γöé    Γöé  (isolated) Γöé   ΓöéGitHubΓöé         Γöé  Γöé   Γöé Items Γöé    Γöé  per agent  Γöé   Γöé      Γöé         Γöé  Γöé   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ    ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ         Γöé  Γöé                                                     Γöé  Γöé   dashboard.js ΓöÇΓöÇ port 7331 ΓöÇΓöÇ mission control      Γöé  Γöé   runtimes/ ΓöÇΓöÇ Claude Code or GitHub Copilot CLI    Γöé  Γöé   meetings/ ΓöÇΓöÇ multi-agent discussions              Γöé  Γöé   pipelines/ ΓöÇΓöÇ multi-stage workflows               Γöé  Γöé   schedules + watches ΓöÇΓöÇ recurring/conditional work Γöé  Γöé   notes.md + knowledge/ ΓöÇΓöÇ team memory and KB       Γöé  ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ  </pre></div></div><footer>  <p>Minions &mdash; built by <a href="https://github.com/yemi33">yemi33</a> &mdash; <a href="https://www.npmjs.com/package/@yemi33/minions">npm</a> &mdash; <a href="https://yemi33.github.io/minions/">Public site</a> &mdash; MIT License &mdash; Claude Code or GitHub Copilot CLI runtime</p></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minions &mdash; Multi-Agent AI Dev Team</title>
+<meta name="description" content="Five autonomous coding agents, one engine, and one dashboard. Minions orchestrates Claude or GitHub Copilot agents to plan, implement, review, verify, and ship code.">
+<style>
+  :root { --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #c9d1d9; --muted: #8b949e; --blue: #58a6ff; --green: #3fb950; --yellow: #d29922; --red: #f85149; --purple: #bc8cff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 80px 20px 60px; }
+  .hero h1 { font-size: 3.5em; color: var(--blue); margin-bottom: 12px; letter-spacing: -1px; }
+  .hero h1 span { color: var(--text); }
+  .hero .tagline { font-size: 1.3em; color: var(--muted); max-width: 600px; margin: 0 auto 32px; }
+  .hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid var(--border); background: var(--surface); }
+  .hero-badge.green { color: var(--green); border-color: rgba(63,185,80,0.3); }
+  .hero-badge.blue { color: var(--blue); border-color: rgba(88,166,255,0.3); }
+  .hero-badge.yellow { color: var(--yellow); border-color: rgba(210,153,34,0.3); }
+  .hero-badge.purple { color: var(--purple); border-color: rgba(188,140,255,0.3); }
+  .cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .cta a { padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.2s; }
+  .cta-primary { background: var(--blue); color: var(--bg); }
+  .cta-primary:hover { background: #79c0ff; }
+  .cta-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+  .cta-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
+  /* Container */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* Agents strip */
+  .agents-strip { display: flex; justify-content: center; gap: 24px; padding: 40px 20px; flex-wrap: wrap; }
+  .agent-pill { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+  .agent-pill .emoji { font-size: 1.4em; }
+  .agent-pill .name { font-weight: 700; color: var(--text); font-size: 14px; }
+  .agent-pill .role { color: var(--muted); font-size: 12px; }
+
+  /* Features grid */
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; padding: 40px 0; }
+  .feature { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+  .feature h3 { color: var(--blue); font-size: 1em; margin-bottom: 6px; }
+  .feature p { color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+  /* Scenario sections */
+  .scenario { margin: 60px 0; }
+  .scenario-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .scenario-num { background: var(--blue); color: var(--bg); font-weight: 700; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+  .scenario h2 { font-size: 1.5em; color: #f0f6fc; }
+  .scenario > p { color: var(--muted); margin-bottom: 16px; max-width: 800px; font-size: 15px; }
+  .demo-frame { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+  .demo-frame img { width: 100%; display: block; }
+  .demo-caption { background: var(--surface); padding: 10px 18px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
+
+  /* Inline badges */
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .badge-green { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
+  .badge-blue { background: rgba(88,166,255,0.15); color: var(--blue); border: 1px solid rgba(88,166,255,0.3); }
+  .badge-yellow { background: rgba(210,153,34,0.15); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }
+  .badge-red { background: rgba(248,81,73,0.15); color: var(--red); border: 1px solid rgba(248,81,73,0.3); }
+  .hl { color: var(--green); font-weight: 600; }
+
+  /* Quick start */
+  .quickstart { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 32px; margin: 60px 0; }
+  .quickstart h2 { color: var(--blue); margin-bottom: 16px; }
+  .quickstart pre { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; overflow-x: auto; font-size: 14px; line-height: 1.8; color: var(--green); }
+  .quickstart pre .comment { color: var(--muted); }
+
+  /* Architecture */
+  .arch { text-align: center; padding: 60px 0; }
+  .arch h2 { color: var(--blue); margin-bottom: 20px; }
+  .arch pre { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; display: inline-block; text-align: left; font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* Footer */
+  footer { text-align: center; color: #484f58; padding: 40px 0; border-top: 1px solid #21262d; margin-top: 80px; font-size: 13px; }
+  footer a { color: var(--blue); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>Minions <span>Mission Control</span></h1>
+  <p class="tagline">Five autonomous coding agents, one engine, one dashboard. Plan, implement, review, verify, and ship code with human control at every gate.</p>
+  <div class="hero-badges">
+    <span class="hero-badge green">Node.js 18+</span>
+    <span class="hero-badge blue">Claude or Copilot</span>
+    <span class="hero-badge yellow">Multi-Project</span>
+    <span class="hero-badge purple">Dashboard + CLI</span>
+  </div>
+  <div class="cta">
+    <a href="https://www.npmjs.com/package/@yemi33/minions" class="cta-primary">Install from npm</a>
+    <a href="#quickstart" class="cta-secondary">Quick Start</a>
+  </div>
+</div>
+
+<!-- Agent strip -->
+<div class="agents-strip">
+  <div class="agent-pill"><span class="emoji">&#x1F3D7;&#xFE0F;</span><div><div class="name">Ripley</div><div class="role">Lead / Explorer</div></div></div>
+  <div class="agent-pill"><span class="emoji">&#x1F527;</span><div><div class="name">Dallas</div><div class="role">Engineer</div></div></div>
+  <div class="agent-pill"><span class="emoji">&#x1F4CA;</span><div><div class="name">Lambert</div><div class="role">Analyst</div></div></div>
+  <div class="agent-pill"><span class="emoji">&#x1F9E0;</span><div><div class="name">Rebecca</div><div class="role">Architect</div></div></div>
+  <div class="agent-pill"><span class="emoji">&#x2699;&#xFE0F;</span><div><div class="name">Ralph</div><div class="role">Engineer</div></div></div>
+</div>
+
+<!-- Features -->
+<div class="container">
+<div class="features">
+  <div class="feature"><h3>Autonomous Dispatch</h3><p>Engine discovers work from plans, PRs, schedules, pipelines, and queues &mdash; then routes to the right agent by role, skill, and availability.</p></div>
+  <div class="feature"><h3>Plan Lifecycle</h3><p>Plan &rarr; Approve &rarr; PRD &rarr; Execute &rarr; Review &rarr; Verify. Completed plans stay available until you manually archive them.</p></div>
+  <div class="feature"><h3>Team Meetings</h3><p>Multi-agent meetings with investigate, debate, and conclude rounds. Agents research, discuss, and produce actionable conclusions.</p></div>
+  <div class="feature"><h3>Multi-Stage Pipelines</h3><p>Chain tasks, meetings, plans, and more into automated workflows. Cron triggers or manual. Artifacts flow between stages.</p></div>
+  <div class="feature"><h3>Review / Fix Loop</h3><p>After implementation, Minions can dispatch reviews, react to human PR comments, and send fixes back to the original author agent.</p></div>
+  <div class="feature"><h3>Git Worktree Isolation</h3><p>Each agent works in its own worktree. No conflicts, no cross-contamination, safe parallel execution.</p></div>
+  <div class="feature"><h3>Knowledge Consolidation</h3><p>Agent findings, quick notes, pinned notes, and feedback consolidate into team notes and a categorized knowledge base.</p></div>
+  <div class="feature"><h3>PR Integration</h3><p>Tracks Azure DevOps and GitHub PRs, including review votes, build status, merge status, human comments, and context-only links.</p></div>
+  <div class="feature"><h3>Scheduled Tasks &amp; Watches</h3><p>Cron-style recurring work plus watches for PRs, work items, dispatches, meetings, pipelines, agents, and status changes.</p></div>
+  <div class="feature"><h3>Command Center &amp; Doc Chat</h3><p>Natural language orchestration, persistent CC tabs, document Q&amp;A/editing, issue filing, routing updates, and local API actions.</p></div>
+  <div class="feature"><h3>Pluggable Runtimes</h3><p>Run agents through Claude Code or GitHub Copilot CLI, with runtime-specific models, effort, session resume, and permission handling.</p></div>
+  <div class="feature"><h3>Live Dashboard</h3><p>Real-time mission control on port 7331 with paginated views, optimistic updates, live streams, metrics, and settings.</p></div>
+  <div class="feature"><h3>One-Command Updates</h3><p><code>minions update</code> pulls the latest npm package, reapplies files, and restarts while preserving config and customizations.</p></div>
+</div>
+
+<!-- Demo scenarios -->
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">1</div><h2>Dashboard Overview</h2></div>
+  <p>Home page with agent status cards, project bar, setup guidance, and engine state. All agents visible at a glance.</p>
+  <div class="demo-frame">
+    <img src="demo/01-dashboard-overview.png" alt="Dashboard overview with agent cards">
+    <div class="demo-caption">Home page showing Minions Members, project bar, and engine status badge</div>
+  </div>
+</div>
+
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">2</div><h2>Work Items</h2></div>
+  <p>Paginated table with status, type, priority, agent, dependencies, artifacts, and linked PRs. <span class="badge badge-yellow">PENDING</span> <span class="badge badge-blue">DISPATCHED</span> <span class="badge badge-green">DONE</span> <span class="badge badge-red">FAILED</span>. Retry, delete, archive, and add feedback with optimistic updates.</p>
+  <div class="demo-frame">
+    <img src="demo/02-work-items.png" alt="Work items table">
+    <div class="demo-caption">Work items page &mdash; 20 per page with create, edit, retry, and delete actions</div>
+  </div>
+</div>
+
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">3</div><h2>Plans &amp; PRD</h2></div>
+  <p>Plan cards with Approve / Discuss &amp; Revise / Reject. PRD dependency graph with per-item retry, reopening, verification, and manual archive.</p>
+  <div class="demo-frame">
+    <img src="demo/03-plans-prd.png" alt="Plans and PRD progress">
+    <div class="demo-caption">Plans page with status-colored cards, PRD dependency graph, and action buttons</div>
+  </div>
+</div>
+
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">4</div><h2>Pull Requests</h2></div>
+  <p>PR tracker sorted by date, with review, build, merge, conflict, and human-comment status. Linked to work items and PRD items. Manual PR linking and context-only observation supported.</p>
+  <div class="demo-frame">
+    <img src="demo/04-pull-requests.png" alt="Pull requests tracker">
+    <div class="demo-caption">PRs sorted newest-first with build status, review status, and agent attribution</div>
+  </div>
+</div>
+
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">5</div><h2>Team Meetings</h2></div>
+  <p>Multi-agent meetings with 3 rounds: investigate, debate, conclude. Live progress per participant. Create plans from conclusions.</p>
+  <div class="demo-frame">
+    <img src="demo/05-meetings.png" alt="Meetings page">
+    <div class="demo-caption">Meetings with round status badges, participant progress, and archive/delete actions</div>
+  </div>
+</div>
+
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">6</div><h2>Pipelines</h2></div>
+  <p>Multi-stage workflows chaining tasks, meetings, plans, tests, docs, and more. Cron triggers or manual runs. Artifact tracking between stages.</p>
+  <div class="demo-frame">
+    <img src="demo/06-pipelines.png" alt="Pipelines page">
+    <div class="demo-caption">Pipeline cards with stage flow visualization, run history, and progress bars</div>
+  </div>
+</div>
+
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">7</div><h2>Notes &amp; Knowledge Base</h2></div>
+  <p>Inbox for agent findings, quick notes, pinned notes, consolidated team notes, and categorized knowledge base. Inline Q&amp;A/editing on documents.</p>
+  <div class="demo-frame">
+    <img src="demo/07-notes-kb.png" alt="Notes and knowledge base">
+    <div class="demo-caption">Notes inbox, team notes, and knowledge base with category tabs and pagination</div>
+  </div>
+</div>
+
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">8</div><h2>Scheduled Tasks</h2></div>
+  <p>Cron-style recurring work with a visual builder. Schedule work items, tests, docs, plans, asks, meetings, and recurring maintenance.</p>
+  <div class="demo-frame">
+    <img src="demo/08-schedules.png" alt="Schedules page">
+    <div class="demo-caption">Schedule list with cron expressions, last-run times, and enable/disable toggles</div>
+  </div>
+</div>
+
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">9</div><h2>Engine &amp; Metrics</h2></div>
+  <p>Dispatch queue, engine log, agent metrics, token usage, runtime/model data, quality signals, and context pressure. All paginated.</p>
+  <div class="demo-frame">
+    <img src="demo/09-engine.png" alt="Engine page">
+    <div class="demo-caption">Active/pending dispatches, completed history, engine log, and per-agent quality metrics</div>
+  </div>
+</div>
+
+<div class="scenario">
+  <div class="scenario-header"><div class="scenario-num">10</div><h2>Command Center</h2></div>
+  <p>Natural language delegation. CC orchestrates &mdash; agents implement. Sessions persist across refreshes and tabs; actions can create work, notes, plans, watches, PR links, and issues.</p>
+  <div class="demo-frame">
+    <img src="demo/10-command-center.png" alt="Command Center panel">
+    <div class="demo-caption">Command Center side panel with conversation history, action execution, and session indicator</div>
+  </div>
+</div>
+
+<!-- Quick Start -->
+<div class="quickstart" id="quickstart">
+  <h2>Quick Start</h2>
+  <pre><span class="comment"># Prerequisites: Node.js 18+, Git, and at least one agent runtime</span>
+<span class="comment"># Install Claude Code or GitHub Copilot CLI separately, then install Minions</span>
+npm install -g @yemi33/minions
+
+<span class="comment"># Bootstrap ~/.minions/ and scan/link repositories</span>
+minions init
+
+<span class="comment"># Or add a specific project later</span>
+minions add ~/my-project
+
+<span class="comment"># Start engine + dashboard, then open http://localhost:7331</span>
+minions restart --open
+minions dash
+
+<span class="comment"># Give your first task</span>
+minions work "Explore the codebase and document the architecture"
+
+<span class="comment"># Useful operations</span>
+minions status
+minions doctor
+minions config set-cli copilot --model gpt-5.4
+
+<span class="comment"># Update to latest</span>
+minions update</pre>
+</div>
+
+<!-- Architecture -->
+<div class="arch">
+  <h2>Architecture</h2>
+  <pre>
+  ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ
+  Γöé                  ~/.minions/ (central hub)           Γöé
+  Γöé                                                     Γöé
+  Γöé   engine.js ΓöÇΓöÇΓöÇΓöÇ 60s tick loop ΓöÇΓöÇΓöÇΓöÇΓöÉ                Γöé
+  Γöé       Γöé                            Γöé                Γöé
+  Γöé   discover work    spawn agents    poll PRs/comments Γöé
+  Γöé       Γöé                Γöé              Γöé             Γöé
+  Γöé   ΓöîΓöÇΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÉ    ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ   ΓöîΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÉ         Γöé
+  Γöé   Γöé Plans Γöé    Γöé  Worktrees  Γöé   Γöé ADO  Γöé         Γöé
+  Γöé   Γöé PRDs  Γöé    Γöé  (isolated) Γöé   ΓöéGitHubΓöé         Γöé
+  Γöé   Γöé Items Γöé    Γöé  per agent  Γöé   Γöé      Γöé         Γöé
+  Γöé   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ    ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ         Γöé
+  Γöé                                                     Γöé
+  Γöé   dashboard.js ΓöÇΓöÇ port 7331 ΓöÇΓöÇ mission control      Γöé
+  Γöé   runtimes/ ΓöÇΓöÇ Claude Code or GitHub Copilot CLI    Γöé
+  Γöé   meetings/ ΓöÇΓöÇ multi-agent discussions              Γöé
+  Γöé   pipelines/ ΓöÇΓöÇ multi-stage workflows               Γöé
+  Γöé   schedules + watches ΓöÇΓöÇ recurring/conditional work Γöé
+  Γöé   notes.md + knowledge/ ΓöÇΓöÇ team memory and KB       Γöé
+  ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
+  </pre>
+</div>
+
+</div>
+
+<footer>
+  <p>Minions &mdash; built by <a href="https://github.com/yemi33">yemi33</a> &mdash; <a href="https://www.npmjs.com/package/@yemi33/minions">npm</a> &mdash; <a href="https://yemi33.github.io/minions/">Public site</a> &mdash; MIT License &mdash; Claude Code or GitHub Copilot CLI runtime</p>
+</footer>
+
+</body>
+</html>
+
