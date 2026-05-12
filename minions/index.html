@@ -247,31 +247,30 @@ minions update</pre>
 <div class="arch">
   <h2>Architecture</h2>
   <pre>
-  ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ
-  Γöé                  ~/.minions/ (central hub)           Γöé
-  Γöé                                                     Γöé
-  Γöé   engine.js ΓöÇΓöÇΓöÇΓöÇ 60s tick loop ΓöÇΓöÇΓöÇΓöÇΓöÉ                Γöé
-  Γöé       Γöé                            Γöé                Γöé
-  Γöé   discover work    spawn agents    poll PRs/comments Γöé
-  Γöé       Γöé                Γöé              Γöé             Γöé
-  Γöé   ΓöîΓöÇΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÉ    ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ   ΓöîΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÉ         Γöé
-  Γöé   Γöé Plans Γöé    Γöé  Worktrees  Γöé   Γöé ADO  Γöé         Γöé
-  Γöé   Γöé PRDs  Γöé    Γöé  (isolated) Γöé   ΓöéGitHubΓöé         Γöé
-  Γöé   Γöé Items Γöé    Γöé  per agent  Γöé   Γöé      Γöé         Γöé
-  Γöé   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ    ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ         Γöé
-  Γöé                                                     Γöé
-  Γöé   dashboard.js ΓöÇΓöÇ port 7331 ΓöÇΓöÇ mission control      Γöé
-  Γöé   runtimes/ ΓöÇΓöÇ Claude Code or GitHub Copilot CLI    Γöé
-  Γöé   meetings/ ΓöÇΓöÇ multi-agent discussions              Γöé
-  Γöé   pipelines/ ΓöÇΓöÇ multi-stage workflows               Γöé
-  Γöé   schedules + watches ΓöÇΓöÇ recurring/conditional work Γöé
-  Γöé   notes.md + knowledge/ ΓöÇΓöÇ team memory and KB       Γöé
-  ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
+  +-----------------------------------------------------+
+  |                  ~/.minions/ (central hub)          |
+  |                                                     |
+  |   engine.js ---- 60s tick loop ----+                |
+  |       |                            |                |
+  |   discover work    spawn agents    poll PRs/comments|
+  |       |                |              |             |
+  |   +-------+    +-------------+   +--------+         |
+  |   | Plans |    |  Worktrees  |   | ADO /  |         |
+  |   | PRDs  |    |  isolated   |   | GitHub |         |
+  |   | Items |    |  per agent  |   +--------+         |
+  |   +-------+    +-------------+                      |
+  |                                                     |
+  |   dashboard.js -- port 7331 -- mission control      |
+  |   runtimes/ -- Claude Code or GitHub Copilot CLI    |
+  |   meetings/ -- multi-agent discussions              |
+  |   pipelines/ -- multi-stage workflows               |
+  |   schedules + watches -- recurring/conditional work |
+  |   notes.md + knowledge/ -- team memory and KB       |
+  +-----------------------------------------------------+
   </pre>
 </div>
 
 </div>
-
 <footer>
   <p>Minions &mdash; built by <a href="https://github.com/yemi33">yemi33</a> &mdash; <a href="https://www.npmjs.com/package/@yemi33/minions">npm</a> &mdash; <a href="https://yemi33.github.io/minions/">Public site</a> &mdash; MIT License &mdash; Claude Code or GitHub Copilot CLI runtime</p>
 </footer>
