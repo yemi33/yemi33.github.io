@@ -1,884 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Yemi Shin</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Yemi Shin</a>
-                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Get to Know Me
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                                href="#experience">Experience</a></li>
-                        <li class="nav-item mx-0 mx-lg-1 dropdown">
-                            <a class="nav-link py-3 px-0 px-lg-3 dropdown-toggle rounded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-expanded="false">
-                                Portfolio
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Yemi Shin is a Software Engineer II at Microsoft, building helpful AI, thoughtful mobile apps, and playful things on the internet.">
+    <meta name="author" content="Yemi Shin">
+    <meta name="theme-color" content="#a8c4bb">
+    <meta property="og:title" content="Yemi Shin - Software Engineer &amp; AI Tinkerer">
+    <meta property="og:description" content="Helpful AI, thoughtful mobile apps, and a little curiosity. Welcome to my corner of the internet.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yemi33.github.io/">
+    <meta property="og:image" content="https://yemi33.github.io/assets/img/portfolio/yemi3.png">
+    <meta property="og:image:alt" content="Yemi Shin smiling">
+    <link rel="canonical" href="https://yemi33.github.io/">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <script src="js/paint.js" defer></script>
+    <title>Yemi Shin - Software Engineer &amp; AI Tinkerer</title>
+</head>
+<body id="page-top" data-design="paint">
+    <a class="skip-link" href="#about">Skip to content</a>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <symbol id="icon-pencil" viewBox="0 0 32 32"><path d="m7 22-2 6 6-2L27 10l-4-4L7 22Z" fill="#ffe35b" stroke="currentColor" stroke-width="2"/><path d="m7 22 4 4M20 9l4 4M5 28l3-1" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="icon-eraser" viewBox="0 0 32 32"><path d="m5 19 13-13 10 10-11 11H13L5 19Z" fill="#ffaaca" stroke="currentColor" stroke-width="2"/><path d="m13 11 10 10M17 27h12" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="icon-folder" viewBox="0 0 48 40"><path d="M3 8V4h15l5 5h21v27H3Z" fill="#ffe365" stroke="currentColor" stroke-width="2"/><path d="M3 13h41v23H3Z" fill="#ffe365" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="icon-bot" viewBox="0 0 64 56"><path d="M32 4v10M26 4h12" stroke="currentColor" stroke-width="3"/><rect x="9" y="14" width="46" height="34" rx="5" fill="#c4b2ff" stroke="currentColor" stroke-width="3"/><path d="M3 25v14M61 25v14M24 39h16" stroke="currentColor" stroke-width="3"/><path d="M21 25h7v7h-7zM37 25h7v7h-7z" fill="currentColor"/></symbol>
+        <symbol id="icon-spark" viewBox="0 0 64 64"><path d="m32 3 7 21 22 8-22 7-7 22-8-22L3 32l21-8Z" fill="#d2f77b" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="icon-flower" viewBox="0 0 80 80"><path d="M40 24C21-9 4 23 24 34-9 33 7 65 28 53 13 81 49 88 49 58c22 22 44-9 17-22 29-14 1-42-13-18C53-3 25-1 40 24Z" fill="#ff8666" stroke="currentColor" stroke-width="2"/><circle cx="42" cy="39" r="12" fill="#ffe36b" stroke="currentColor" stroke-width="2"/><path d="M37 35v3m9-3v3m-9 5q5 5 10 0" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="icon-cup" viewBox="0 0 56 56"><path d="M10 18h31v19c0 15-31 15-31 0Zm31 3c20-4 14 19 0 15M7 51h39M20 3v9M30 3v9" fill="#fff6de" stroke="currentColor" stroke-width="3"/></symbol>
+    </svg>
+
+    <main class="paint-desktop">
+        <div class="paint-window retro-window">
+            <header>
+                <div class="window-title">
+                    <span><svg class="small-icon" aria-hidden="true"><use href="#icon-pencil"/></svg> yemi_shin_2026.bmp - Paint</span>
+                    <span class="window-decoration" aria-hidden="true"><b>_</b><b>&#9633;</b><b>&times;</b></span>
+                </div>
+                <nav class="paint-menu" aria-label="Main navigation">
+                    <a href="#about"><u>A</u>bout</a>
+                    <a href="#portfolio"><u>W</u>ork</a>
+                    <a href="resume.html"><u>R</u>esume</a>
+                    <a href="#contact"><u>S</u>ay hello</a>
+                    <span>made with curiosity, not a template</span>
+                </nav>
+            </header>
+            <div class="paint-body">
+                <aside class="paint-tools" aria-label="Doodle tools">
+                    <button class="bevel tool active" data-tool="pen" aria-label="Pencil" aria-pressed="true" title="Pencil" disabled><svg aria-hidden="true"><use href="#icon-pencil"/></svg></button>
+                    <button class="bevel tool" data-tool="eraser" aria-label="Eraser" aria-pressed="false" title="Eraser" disabled><svg aria-hidden="true"><use href="#icon-eraser"/></svg></button>
+                    <button class="bevel tool" id="undo-doodle" aria-label="Undo last stroke" title="Undo last stroke" disabled>&#8630;</button>
+                    <button class="bevel tool" id="clear-doodle" aria-label="Clear the doodle" title="Clear the doodle" disabled>CLR</button>
+                    <div class="tool-divider"></div>
+                    <span class="tool-caption">YOUR<br>TOOLKIT</span>
+                    <svg class="tool-mascot" aria-hidden="true"><use href="#icon-bot"/></svg>
+                    <span class="tool-caption">be a little<br>curious.</span>
+                </aside>
+                <div class="paint-paper">
+                    <div class="canvas-topline"><span>PERSONAL WEBSITE / 2026 EDITION</span><span>HELLO, INTERNET! <span class="green-dot"></span></span></div>
+                    <section class="paint-hero" id="about" aria-labelledby="intro-heading" tabindex="-1">
+                        <div class="paint-intro">
+                            <p class="handwritten eyebrow">welcome to my little corner of the web</p>
+                            <h1 id="intro-heading">hi, i'm <span class="paint-name">yemi<span class="name-dot">.</span><svg viewBox="0 0 260 24" aria-hidden="true"><path d="M4 13Q91 1 252 12M16 20Q136 9 234 17" fill="none" stroke="#7554ca" stroke-width="5"/></svg></span></h1>
+                            <p class="paint-role">Software engineer. AI tinkerer.<br>Serial <span class="circled">"what if?"</span> person.</p>
+                            <p class="intro-copy">I build helpful AI, thoughtful mobile apps, and occasionally, weird little things on the internet.</p>
+                            <div class="paint-cta">
+                                <a class="bevel big-bevel" href="#portfolio">Open my work <span aria-hidden="true">&#8599;</span></a>
+                                <a class="text-link" href="resume.html" aria-label="View Yemi Shin's resume">resume.pdf &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="paint-person">
+                            <svg class="hello-flower" aria-hidden="true"><use href="#icon-flower"/></svg>
+                            <figure class="selection-frame">
+                                <img src="assets/img/portfolio/yemi3.png" alt="Yemi Shin smiling" width="529" height="529" fetchpriority="high">
+                                <i class="selection-handle top-left" aria-hidden="true"></i><i class="selection-handle top-right" aria-hidden="true"></i><i class="selection-handle bottom-left" aria-hidden="true"></i><i class="selection-handle bottom-right" aria-hidden="true"></i>
+                            </figure>
+                            <span class="portrait-label handwritten">the human behind the pixels &#8593;</span>
+                            <span class="paint-sticker">BUILDING<br>THINGS THAT<br><b>help people.</b></span>
+                        </div>
+                    </section>
+                    <div class="paint-current"><span class="green-dot"></span><b>Currently</b> Software Engineer II @ Microsoft <span class="current-divider">/</span><span>AI + mobile + a healthy dose of curiosity</span></div>
+                    <section id="portfolio" aria-labelledby="work-heading">
+                        <div class="section-heading"><h2 id="work-heading">A few things I've made</h2><span class="handwritten">click to open &#8600;</span></div>
+                        <div class="paint-projects">
+                            <a class="project-card lavender-card" href="minions/" data-project="minions">
+                                <span class="card-number">01 / AGENTIC SYSTEMS</span><svg aria-hidden="true"><use href="#icon-bot"/></svg>
+                                <h3>Minions</h3><p>A mission control for a whole team of AI agents.</p><span class="card-link">Meet the crew &#8599;</span>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="https://yemi33.github.io/Aequitas-Final-Archive-Website/">Senior Project</a></li>
-                                <li><a class="dropdown-item" href="#natural-language-processing">Natural Language Processing</a></li>
-                                <li><a class="dropdown-item" href="#computational-media">Computational Media</a></li>
-                                <li><a class="dropdown-item" href="#web-development">Web Development</a></li>
-                                <li><a class="dropdown-item" href="#other-projects">Other Projects</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                                href="#contact">Contact</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                                href="#social">Social Media</a></li>
-                    </ul>
+                            <a class="project-card yellow-card" href="resume.html" data-project="copilot">
+                                <span class="card-number">02 / MY DAY JOB</span><svg aria-hidden="true"><use href="#icon-spark"/></svg>
+                                <h3>Microsoft 365 Copilot</h3><p>Bringing AI-powered collaboration to mobile.</p><span class="card-link">A peek at my work &#8599;</span>
+                            </a>
+                            <a class="project-card pink-card" href="https://github.com/yemi33/Chef-Raimsey" data-project="chef">
+                                <span class="card-number">03 / THE WEIRD STUFF</span><svg aria-hidden="true"><use href="#icon-cup"/></svg>
+                                <h3>Chef rAImsey</h3><p>An AI that dreams up dessert. What could go wrong?</p><span class="card-link">Something sweet &#8599;</span>
+                            </a>
+                        </div>
+                        <a class="archive-link" href="archive.html#portfolio"><svg aria-hidden="true"><use href="#icon-folder"/></svg><span><b>The experiments folder</b><small>Games, creative coding, student projects, and earlier adventures.</small></span><span aria-hidden="true">&#8599;</span></a>
+                    </section>
+                    <details class="experience-file" id="experience">
+                        <summary>experience.txt <span>&mdash; a little more about my path</span></summary>
+                        <div class="experience-content">
+                            <article><span class="small-label">SEP 2024 &mdash; PRESENT</span><h3>Software Engineer II / Microsoft</h3><p>Building Microsoft 365 Copilot experiences across mobile and web, with a focus on AI-powered collaboration, reusable platforms, and agentic developer tools.</p></article>
+                            <article><span class="small-label">SEP 2022 &mdash; SEP 2024</span><h3>Software Engineer / Microsoft Loop</h3><p>Built Android experiences including notifications, in-app purchases, and deep linking with Jetpack Compose, Kotlin Coroutines, and Compose Navigation.</p></article>
+                            <article><span class="small-label">2018 &mdash; 2022</span><h3>Computer Science / Carleton College</h3><p>B.A. in Computer Science. A foundation in algorithms, software design, NLP, and asking better questions.</p></article>
+                            <a class="text-link" href="resume.html">The full story is in my resume &#8599;</a>
+                        </div>
+                    </details>
+                    <div class="paint-bottom" id="contact">
+                        <section aria-labelledby="contact-heading">
+                            <h2 id="contact-heading">Good software can have a personality.</h2>
+                            <p>So can the people who make it. <a href="mailto:yshin1999@gmail.com" data-project="contact">Let's say hello &#8599;</a></p>
+                            <nav class="social-links" id="social" aria-label="Social links"><a href="https://github.com/yemi33">GitHub</a><a href="https://www.linkedin.com/in/yemi-shin/">LinkedIn</a><span>Mountain View, CA</span></nav>
+                        </section>
+                        <div class="doodle-box">
+                            <span class="handwritten doodle-label" id="doodle-label">a tiny canvas for your big ideas &#8600;</span>
+                            <canvas id="doodle-canvas" width="560" height="220" aria-labelledby="doodle-label" aria-describedby="doodle-status">An optional drawing pad. All portfolio content is available outside this canvas.</canvas>
+                            <small id="doodle-status" role="status">Enable JavaScript to doodle. All project and resume links work without it.</small>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+            <div class="paint-palette" role="group" aria-label="Drawing colors">
+                <span class="current-color" aria-hidden="true"></span>
+                <div class="swatches" role="group" aria-label="Pencil color">
+                    <button style="--swatch:#25221f" data-color="#25221f" aria-label="Black" aria-pressed="true" disabled></button>
+                    <button style="--swatch:#ffffff" data-color="#ffffff" aria-label="White" aria-pressed="false" disabled></button>
+                    <button style="--swatch:#e45b51" data-color="#e45b51" aria-label="Red" aria-pressed="false" disabled></button>
+                    <button style="--swatch:#ffb854" data-color="#ffb854" aria-label="Orange" aria-pressed="false" disabled></button>
+                    <button style="--swatch:#f9d94f" data-color="#f9d94f" aria-label="Yellow" aria-pressed="false" disabled></button>
+                    <button style="--swatch:#4b9661" data-color="#4b9661" aria-label="Green" aria-pressed="false" disabled></button>
+                    <button style="--swatch:#3c74c8" data-color="#3c74c8" aria-label="Blue" aria-pressed="false" disabled></button>
+                    <button style="--swatch:#8962d3" data-color="#8962d3" aria-label="Purple" aria-pressed="false" disabled></button>
+                    <button style="--swatch:#ed8bb4" data-color="#ed8bb4" aria-label="Pink" aria-pressed="false" disabled></button>
+                </div>
+                <span>Life's too short for boring websites.</span>
+            </div>
+            <div class="paint-status"><span>For inspiration, look around.</span><span>2026 &times; endless possibilities</span><span>100%</span></div>
+        </div>
+        <footer class="paint-desktop-note">a work in progress. just like the rest of us. <span>Yemi Shin &copy; 2026</span></footer>
+    </main>
 
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/portfolio/yemi3.png" alt="" />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Yemi Shin</h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Software Engineer - A Daughter - A Friend</p>
-                <p class="masthead-subheading font-weight-light mb-0" id="motto">Motto: I can do anything I set my mind to.</p>
-            </div>
-        </header>
-
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <p class="masthead-subheading font-weight-light mb-0 ml-5 mr-5" id="intro">I'm a software engineer at Microsoft working on the Android app for M365's latest app, Loop. I am passionate about creating great apps and bringing value to customers.</p>
-                    <!-- <div class="col-lg-4 ml-auto"><p class="lead" id="intro">I'm a junior Computer Science major at Carleton College who is passionate about making the world a fun and playful place for everybody.</p></div> -->
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="assets/img/Yemi's Resume 2024.pdf">
-                        <i class="fas fa-download mr-2"></i>
-                        Yemi's Resume
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section-->
-        <section class="page-section portfolio" id="experience">
-            <div class="container">
-            <div class="row justify-content-center">
-                <!-- Experience Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Work Experience</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Experience Item 1-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#experienceModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>Microsoft</small></div>
-                        </div>
-                        <img class="mx-auto d-block" src="assets/img/portfolio/microsoft2.png" alt=""/>
-                    </div>
-                </div>
-                <!-- Experience Item 2-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#experienceModal2">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>WAVES @ DevoLab Michigan State University</small></div>
-                        </div>
-                        <img class="mx-auto d-block" src="assets/img/portfolio/avida.png" alt=""/>
-                    </div>
-                </div>
-                <!-- Experience Item 3-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#experienceModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>GeoComm Inc.</small></div>
-                        </div>
-                        <img class="mx-auto d-block" src="assets/img/portfolio/geocomm.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-
-                <h3 class="text-center text-uppercase text-secondary mt-5 mb-3" id="natural-language-processing">Natural Language Processing</h2>
-                <span></span>
-                <!-- Natural Language Processing Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 7-->
-                    <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>Guess Who? Conversational AI Game</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/guess.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 8-->
-                    <div class="col-md-6 col-lg-4 mb-3 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal8">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>Chef Raimsey: Natural Language Generation</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/chef.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-                
-
-                <h3 class="text-center text-uppercase text-secondary mt-5 mb-3" id="computational-media">Computational Media</h2>
-                <!-- Computational Media Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>Murder Mystery Generator Website</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/annonymous.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-3 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>My Awkward Lyricist</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/mic.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>ItzYoBirthday: Twitter Bot to Make Everyday Your Birthday</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/birthday.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-
-
-                <h3 class="text-center text-uppercase text-secondary mt-5 mb-3" id="web-development">Web Development</h2>
-                <!-- Web Development Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-3">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>COVID-19 Dashboard</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/bacteria.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 9-->
-                    <div class="col-md-6 col-lg-4 mb-3 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal9">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>E-Commerce Website</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/shop.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-
-
-                <h3 class="text-center text-uppercase text-secondary mt-5 mb-3" id="other-projects">Other Fun Projects!</h2>
-                <!-- Other Fun Projects Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-3">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>Virtual Zoltar: My First Project</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/magic-ball.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-3">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>C-Scheme Interpreter</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/binary-code.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 10-->
-                    <div class="col-md-6 col-lg-4 mb-3 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal10">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></br><small>Maaath: Android Game to Learn Math</small></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/math.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-       
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Say Hello!</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <form id="contactFormNew" action="https://formspree.io/f/xzbkaywa" method="POST" />
-                        <div class="control-group">
-                          <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                            <label>Name</label>
-                            <input name="name" class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
-                            <p class="help-block text-danger"></p>
-                          </div>
-                        </div>
-                        <div class="control-group">
-                          <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                            <label>Email Address</label>
-                            <input name="_replyto" class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
-                            <p class="help-block text-danger"></p>
-                          </div>
-                        </div>
-                        <div class="control-group">
-                          <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                            <label>Message</label>
-                            <textarea name="message" class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
-                            <p class="help-block text-danger"></p>
-                          </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="form-group">
-                          <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>
-                          <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" onclick="successfulSend()">Refresh</button>
-                        </div>
-                      </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            300 North College St. 
-                            <br />
-                            Northfield, MN 55057
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4" id="social">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/shin.yemi/"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/yemi_shin/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yemi-shin-a4001315b/"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/yemi33"><i class="fab fa-github"></i></a>
-                    </div>
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Email</h4>
-                        <p class="lead mb-0">
-                            yshin1999@gmail.com
-                        </p>
-                    </div>
-                    <!-- Footer About Text-->
-                    <!-- <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
-                    </div> -->
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Yemi Shin 2021</small></div>
-            <div><small>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></small></div>
-        </div>
-        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-        <div class="scroll-to-top d-lg-none position-fixed">
-            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
-        </div>
-
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal1Label">Virtual Zoltar</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/magic-ball.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">A Virtual Fortune Teller that gives you a reading on almost all aspects of your life. My first ever computer program!</p>
-                                    <button class="btn btn-primary" id="github-button" onclick=" window.open('https://github.com/yemi33/Virtual-Zoltar', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See on GitHub
-                                    </button>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">COVID-19 Dashboard</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/bacteria.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">A Dashboard web application that lets the user query the latest statistics about COVID-19.</p>
-                                    <button class="btn btn-primary" id="github-button" onclick=" window.open('https://github.com/yemi33/COVID-Dashboard', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See on GitHub
-                                    </button>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal3Label">C Interpreter</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/binary-code.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">A C interpreter that interprets Scheme code!</p>
-                                    <button class="btn btn-primary" id="github-button" onclick=" window.open('https://github.com/yemi33/C-Scheme-Interpreter', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See on GitHub
-                                    </button>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Murder Mysteries</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/annonymous.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">A website that generates a new murder mystery plot every time the user refreshes the page, and which prompts the user to become the detectives in these mysteries and solve the case!</p>
-                                    <button class="btn btn-primary" id="github-button" onclick=" window.open('https://github.com/yemi33/Murder-Mysteries', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See on GitHub
-                                    </button>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Lyric Generator</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <!-- <img class="img-fluid rounded mb-5" src="assets/img/portfolio/mic.png" alt="" /> -->
-                                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/941187898&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/yemi-shin" title="Yemi Shin" target="_blank" style="color: #cccccc; text-decoration: none;">Yemi Shin</a> · <a href="https://soundcloud.com/yemi-shin/hersong" title="Hersong" target="_blank" style="color: #cccccc; text-decoration: none;">Hersong</a></div>
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">A Lyric Generator that uses grammar to generate novel lyrics sourced from pop songs. This song was sung by me!</p>
-                                    <div class="buttons">
-                                        <button class="btn btn-primary mb-2" id="github-button" onclick=" window.open('https://github.com/yemi33/Lyric-Generation', '_blank')">
-                                            <i class="fab fa-github"></i>
-                                            See on GitHub
-                                        </button>
-                                        
-                                        <button class="btn btn-primary mb-2" id="sound-button" onclick=" window.open('https://soundcloud.com/yemi-shin/hersong', '_blank')">
-                                            <i class="fab fa-soundcloud"></i>
-                                            Listen on SoundCloud
-                                        </button>
-                                        
-                                        <button class="btn btn-primary mb-2" data-dismiss="modal">
-                                            <i class="fas fa-times fa-fw"></i>
-                                            Close Window
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">Twitter Bot</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/birthday.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">A Twitter Bot that celebrates everyday as someone's birthday with randomly generated birthday cakes.</p>
-                                    <button class="btn btn-primary" id="github-button" onclick=" window.open('https://twitter.com/ItzYoBirthday', '_blank')">
-                                        <i class="fab fa-twitter"></i>
-                                        See on Twitter
-                                    </button>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 7-->
-        <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-labelledby="portfolioModal7Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal7Label">Conversational AI</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/guess.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Conversational AI game where you interrogate a character in a murder mystery and determine if he/she is the culprit.</p>
-                                    <button class="btn btn-primary" id="github-button" onclick=" window.open('https://github.com/yemi33/Guess-Who-Conversational-AI-Game-of-Interrogation/tree/master/component6', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See on GitHub
-                                    </button>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 8-->
-        <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal8Label">Natural Language Generation</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/chef.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">AI that converses with the user to find out their dessert preferences, and with probabilistic modelling of natural language suggests a unique dessert recipe.</p>
-                                    <button class="btn btn-primary" id="github-button" onclick=" window.open('https://github.com/yemi33/Chef-Raimsey', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See on GitHub
-                                    </button>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 9-->
-        <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-labelledby="portfolioModal9Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal9Label">E-Commerce Website</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/shop.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Learned React.js framework for web development while creating an e-commerce website for a friend's business.</p>
-                                    <button class="btn btn-primary" id="github-button" onclick=" window.open('https://github.com/yemi33/MERN-Web-Development', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See on GitHub
-                                    </button>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 10-->
-        <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-labelledby="portfolioModal10Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal10Label">Maaath Android Game</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/math.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Developed an Android game geared towards teaching children arithmetics through play.</p>
-                                    <button class="btn btn-primary mb-3" id="github-button" onclick=" window.open('https://play.google.com/store/apps/details?id=com.comidaforfamilias.maaath&hl=en_US&gl=US', '_blank')">
-                                        <i class="fab fa-google-play"></i>
-                                        See on Google Play
-                                    </button>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Experience Modal 1-->
-        <div class="portfolio-modal modal fade" id="experienceModal1" tabindex="-1" role="dialog" aria-labelledby="experienceModal1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="experienceModal1Label">Software Engineer</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/loop.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Implemented various UX in the Android app including notifications UI, in app purchase flow, deeplinking, etc. Followed best Modern Android Development (MAD) practices including Jetpack Compose, Kotlin Coroutines, and Compose Navigation. > 50k users and growing.</p>
-                                    <button class="btn btn-primary mb-2" id="github-button" onclick=" window.open('https://play.google.com/store/apps/details?id=com.microsoft.loop', '_blank')">
-                                        <i class="fa-brands fa-android"></i>
-                                        See on Google Play
-                                    </button>
-                                    <button class="btn btn-primary mb-2" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Experience Modal 2-->
-        <div class="portfolio-modal modal fade" id="experienceModal2" tabindex="-1" role="dialog" aria-labelledby="experienceModal2Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="experienceModal2Label">Software Developer</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/avida.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Worked on Avida-ED 4, an educational software used to study evolution, as part of WAVES workshop at Michigan State University.</p>
-                                    <button class="btn btn-primary mb-2" id="github-button" onclick=" window.open('https://github.com/yemi33/Avida-ED-Eco', '_blank')">
-                                        <i class="fab fa-github"></i>
-                                        See on GitHub
-                                    </button>
-                                    <button class="btn btn-primary mb-2" id="github-button" onclick=" window.open('https://avida-ed.msu.edu/app4/', '_blank')">
-                                        <i class="fa-solid fa-globe"></i>
-                                        See App
-                                    </button>
-                                    <button class="btn btn-primary mb-2" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Experience Modal 3-->
-        <div class="portfolio-modal modal fade" id="experienceModal3" tabindex="-1" role="dialog" aria-labelledby="experienceModal3Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="experienceModal3Label">Software Development Intern</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/geocomm.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Worked on automating the Indoor Mapping procedure, using machine learning with Python, C#, and AWS SageMaker.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="project-title">
+        <div class="dialog-titlebar"><span>PROJECT FILE / YEMI SHIN</span><button id="close-project" aria-label="Close window">&times;</button></div>
+        <div class="dialog-content"><span class="small-label" id="project-category"></span><h2 id="project-title"></h2><p id="project-description"></p><ul id="project-details"></ul><a id="project-destination" class="dialog-link"></a></div>
+    </dialog>
+</body>
 </html>

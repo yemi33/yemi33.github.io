@@ -5,109 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minions &mdash; Multi-Agent AI Dev Team</title>
 <meta name="description" content="Five autonomous coding agents, one engine, and one dashboard. Minions orchestrates Claude or GitHub Copilot agents to plan, implement, review, verify, and ship code.">
-<style>
-  :root { --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #c9d1d9; --muted: #8b949e; --blue: #58a6ff; --green: #3fb950; --yellow: #d29922; --red: #f85149; --purple: #bc8cff; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-
-  /* Hero */
-  .hero { text-align: center; padding: 80px 20px 60px; }
-  .hero h1 { font-size: 3.5em; color: var(--blue); margin-bottom: 12px; letter-spacing: -1px; }
-  .hero h1 span { color: var(--text); }
-  .hero .tagline { font-size: 1.3em; color: var(--muted); max-width: 600px; margin: 0 auto 32px; }
-  .hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid var(--border); background: var(--surface); }
-  .hero-badge.green { color: var(--green); border-color: rgba(63,185,80,0.3); }
-  .hero-badge.blue { color: var(--blue); border-color: rgba(88,166,255,0.3); }
-  .hero-badge.yellow { color: var(--yellow); border-color: rgba(210,153,34,0.3); }
-  .hero-badge.purple { color: var(--purple); border-color: rgba(188,140,255,0.3); }
-  .cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-  .cta a { padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.2s; }
-  .cta-primary { background: var(--blue); color: var(--bg); }
-  .cta-primary:hover { background: #79c0ff; }
-  .cta-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
-  .cta-secondary:hover { border-color: var(--blue); color: var(--blue); }
-
-  /* Container */
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-  /* Agents strip */
-  .agents-strip { display: flex; justify-content: center; gap: 24px; padding: 40px 20px; flex-wrap: wrap; }
-  .agent-pill { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
-  .agent-pill .emoji { font-size: 1.4em; }
-  .agent-pill .name { font-weight: 700; color: var(--text); font-size: 14px; }
-  .agent-pill .role { color: var(--muted); font-size: 12px; }
-
-  /* Features grid */
-  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; padding: 40px 0; }
-  .feature { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
-  .feature h3 { color: var(--blue); font-size: 1em; margin-bottom: 6px; }
-  .feature p { color: var(--muted); font-size: 13px; line-height: 1.5; }
-
-  /* Scenario sections */
-  .scenario { margin: 60px 0; }
-  .scenario-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
-  .scenario-num { background: var(--blue); color: var(--bg); font-weight: 700; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
-  .scenario h2 { font-size: 1.5em; color: #f0f6fc; }
-  .scenario > p { color: var(--muted); margin-bottom: 16px; max-width: 800px; font-size: 15px; }
-  .demo-frame { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
-  .demo-frame img { width: 100%; display: block; }
-  .demo-caption { background: var(--surface); padding: 10px 18px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
-
-  /* Inline badges */
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
-  .badge-green { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
-  .badge-blue { background: rgba(88,166,255,0.15); color: var(--blue); border: 1px solid rgba(88,166,255,0.3); }
-  .badge-yellow { background: rgba(210,153,34,0.15); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }
-  .badge-red { background: rgba(248,81,73,0.15); color: var(--red); border: 1px solid rgba(248,81,73,0.3); }
-  .hl { color: var(--green); font-weight: 600; }
-
-  /* Quick start */
-  .quickstart { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 32px; margin: 60px 0; }
-  .quickstart h2 { color: var(--blue); margin-bottom: 16px; }
-  .quickstart pre { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; overflow-x: auto; font-size: 14px; line-height: 1.8; color: var(--green); }
-  .quickstart pre .comment { color: var(--muted); }
-
-  /* Architecture */
-  .arch { text-align: center; padding: 60px 0; }
-  .arch h2 { color: var(--blue); margin-bottom: 20px; }
-  .arch pre { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; display: inline-block; text-align: left; font-size: 13px; color: var(--muted); line-height: 1.7; }
-
-  /* Footer */
-  footer { text-align: center; color: #484f58; padding: 40px 0; border-top: 1px solid #21262d; margin-top: 80px; font-size: 13px; }
-  footer a { color: var(--blue); text-decoration: none; }
-</style>
+<meta name="theme-color" content="#a8c4bb">
+<link rel="icon" href="../assets/img/favicon.ico">
+<link rel="stylesheet" href="../css/portfolio.css">
+<link rel="stylesheet" href="paint.css">
 </head>
-<body>
-
-<!-- Hero -->
-<div class="hero">
-  <h1>Minions <span>Mission Control</span></h1>
-  <p class="tagline">Five autonomous coding agents, one engine, one dashboard. Plan, implement, review, verify, and ship code with human control at every gate.</p>
-  <div class="hero-badges">
-    <span class="hero-badge green">Node.js 18+</span>
-    <span class="hero-badge blue">Claude or Copilot</span>
-    <span class="hero-badge yellow">Multi-Project</span>
-    <span class="hero-badge purple">Dashboard + CLI</span>
+<body class="paint-minions" data-design="paint">
+<a class="skip-link" href="#overview">Skip to content</a>
+<main class="paint-desktop">
+<article class="retro-window subpage-window">
+  <div class="window-title">
+    <span><svg class="small-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="m7 22-2 6 6-2L27 10l-4-4L7 22Z" fill="#ffe35b" stroke="currentColor" stroke-width="2"/><path d="m7 22 4 4M20 9l4 4" stroke="currentColor" stroke-width="2"/></svg> minions_project.bmp - Paint</span>
+    <span class="window-decoration" aria-hidden="true"><b>_</b><b>&#9633;</b><b>&times;</b></span>
   </div>
-  <div class="cta">
-    <a href="https://www.npmjs.com/package/@yemi33/minions" class="cta-primary">Install from npm</a>
-    <a href="#quickstart" class="cta-secondary">Quick Start</a>
+  <nav class="paint-menu" aria-label="Main navigation">
+    <a href="../index.html"><u>H</u>ome</a>
+    <a href="../archive.html"><u>E</u>xperiments</a>
+    <a href="../resume.html"><u>R</u>esume</a>
+    <a href="../index.html#contact"><u>S</u>ay hello</a>
+    <span>one project, a whole little crew</span>
+  </nav>
+  <div class="subpage-paper">
+    <nav class="subpage-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">home</a><span aria-hidden="true">/</span>
+      <a href="../archive.html">experiments</a><span aria-hidden="true">/</span>
+      <span aria-current="page">minions</span>
+    </nav>
+
+    <div class="mission-hero" id="overview" tabindex="-1">
+      <header class="subpage-heading">
+        <span class="small-label">PROJECT FILE 01 / AGENTIC SYSTEMS</span>
+        <h1><span class="ink-highlight">Minions</span><span class="mission-subtitle">Mission Control</span></h1>
+        <p>Five autonomous coding agents, one engine, one dashboard. Plan, implement, review, verify, and ship code with human control at every gate.</p>
+        <div class="hero-badges" aria-label="Project details">
+          <span class="hero-badge green">Node.js 18+</span>
+          <span class="hero-badge blue">Claude or Copilot</span>
+          <span class="hero-badge yellow">Multi-Project</span>
+          <span class="hero-badge purple">Dashboard + CLI</span>
+        </div>
+        <div class="mission-actions">
+          <a href="https://www.npmjs.com/package/@yemi33/minions" class="bevel big-bevel">Install from npm <span aria-hidden="true">&#8599;</span></a>
+          <a href="#quickstart" class="text-link">Quick Start &#8595;</a>
+        </div>
+      </header>
+      <aside class="mission-sketch" aria-label="The Minions workflow">
+        <div class="sketch-file"><span class="small-label">the_game_plan.txt</span><span class="green-dot" aria-hidden="true"></span></div>
+        <svg class="crew-doodle" viewBox="0 0 280 115" aria-hidden="true">
+          <g fill="#fff3bd" stroke="#272521" stroke-width="2.5" stroke-linejoin="round">
+            <path d="M36 20v11m-5-11h10M9 47v17m53-17v17"/><rect x="15" y="32" width="42" height="41" rx="4"/>
+            <path d="M92 12v11m-5-11h10M65 39v17m53-17v17"/><rect x="71" y="24" width="42" height="41" rx="4" fill="#fbe3e8"/>
+            <path d="M148 26v11m-5-11h10M121 53v17m53-17v17"/><rect x="127" y="38" width="42" height="41" rx="4" fill="#c4b2ff"/>
+            <path d="M204 12v11m-5-11h10M177 39v17m53-17v17"/><rect x="183" y="24" width="42" height="41" rx="4" fill="#e0efdd"/>
+            <path d="M256 26v11m-5-11h10M229 53v17m48-17v17"/><rect x="235" y="38" width="37" height="41" rx="4"/>
+            <path d="M25 45v6m20-6v6M29 61h13M81 37v6m20-6v6M85 53h13M137 51v6m20-6v6M141 67h13M193 37v6m20-6v6M197 53h13M245 51v6m17-6v6M247 67h13" fill="none"/>
+            <path d="M19 96q103 10 240-1m-237 6q118 8 228 0" fill="none" stroke="#8661bb" stroke-width="2"/>
+          </g>
+        </svg>
+        <p class="handwritten sketch-caption">a tiny team for your big ideas.</p>
+        <ol class="mission-flow">
+          <li>Plan</li><li class="human-gate">Approve</li><li>PRD</li>
+          <li>Execute</li><li>Review</li><li>Verify</li>
+        </ol>
+        <p class="sketch-note"><span aria-hidden="true">&#10548;</span> You stay in the loop.</p>
+      </aside>
+    </div>
+
+    <nav class="project-tabs" aria-label="On this page">
+      <span class="small-label">IN THIS FILE</span>
+      <a href="#crew">The crew</a><a href="#features">Features</a><a href="#screen-tour">Screen tour</a>
+      <a href="#quickstart">Quick Start</a><a href="#architecture">Architecture</a>
+    </nav>
+
+<section class="project-section" id="crew" aria-labelledby="crew-heading">
+  <div class="project-section-heading">
+    <div><span class="small-label">01 / MEET THE TEAM</span><h2 id="crew-heading">Five agents. <span class="ink-highlight">One mission.</span></h2></div>
+    <span class="handwritten">your new coworkers &#8600;</span>
   </div>
-</div>
+  <div class="agents-strip">
+    <div class="agent-pill"><span class="agent-number">01</span><span class="emoji" aria-hidden="true">&#x1F3D7;&#xFE0F;</span><div><div class="name">Ripley</div><div class="role">Lead / Explorer</div></div></div>
+    <div class="agent-pill"><span class="agent-number">02</span><span class="emoji" aria-hidden="true">&#x1F527;</span><div><div class="name">Dallas</div><div class="role">Engineer</div></div></div>
+    <div class="agent-pill"><span class="agent-number">03</span><span class="emoji" aria-hidden="true">&#x1F4CA;</span><div><div class="name">Lambert</div><div class="role">Analyst</div></div></div>
+    <div class="agent-pill"><span class="agent-number">04</span><span class="emoji" aria-hidden="true">&#x1F9E0;</span><div><div class="name">Rebecca</div><div class="role">Architect</div></div></div>
+    <div class="agent-pill"><span class="agent-number">05</span><span class="emoji" aria-hidden="true">&#x2699;&#xFE0F;</span><div><div class="name">Ralph</div><div class="role">Engineer</div></div></div>
+  </div>
+</section>
 
-<!-- Agent strip -->
-<div class="agents-strip">
-  <div class="agent-pill"><span class="emoji">&#x1F3D7;&#xFE0F;</span><div><div class="name">Ripley</div><div class="role">Lead / Explorer</div></div></div>
-  <div class="agent-pill"><span class="emoji">&#x1F527;</span><div><div class="name">Dallas</div><div class="role">Engineer</div></div></div>
-  <div class="agent-pill"><span class="emoji">&#x1F4CA;</span><div><div class="name">Lambert</div><div class="role">Analyst</div></div></div>
-  <div class="agent-pill"><span class="emoji">&#x1F9E0;</span><div><div class="name">Rebecca</div><div class="role">Architect</div></div></div>
-  <div class="agent-pill"><span class="emoji">&#x2699;&#xFE0F;</span><div><div class="name">Ralph</div><div class="role">Engineer</div></div></div>
-</div>
-
-<!-- Features -->
-<div class="container">
-<div class="features">
+<section class="project-section" id="features" aria-labelledby="features-heading">
+  <div class="project-section-heading">
+    <div><span class="small-label">02 / INSIDE THE TOOLBOX</span><h2 id="features-heading">More than a chat window.</h2></div>
+    <span class="handwritten">built to do the work.</span>
+  </div>
+  <div class="features">
   <div class="feature"><h3>Autonomous Dispatch</h3><p>Engine discovers work from plans, PRs, schedules, pipelines, and queues &mdash; then routes to the right agent by role, skill, and availability.</p></div>
   <div class="feature"><h3>Plan Lifecycle</h3><p>Plan &rarr; Approve &rarr; PRD &rarr; Execute &rarr; Review &rarr; Verify. Completed plans stay available until you manually archive them.</p></div>
   <div class="feature"><h3>Team Meetings</h3><p>Multi-agent meetings with investigate, debate, and conclude rounds. Agents research, discuss, and produce actionable conclusions.</p></div>
@@ -121,103 +109,172 @@
   <div class="feature"><h3>Pluggable Runtimes</h3><p>Run agents through Claude Code or GitHub Copilot CLI, with runtime-specific models, effort, session resume, and permission handling.</p></div>
   <div class="feature"><h3>Live Dashboard</h3><p>Real-time mission control on port 7331 with paginated views, optimistic updates, live streams, metrics, and settings.</p></div>
   <div class="feature"><h3>One-Command Updates</h3><p><code>minions update</code> pulls the latest npm package, reapplies files, and restarts while preserving config and customizations.</p></div>
-</div>
+  </div>
+</section>
 
-<!-- Demo scenarios -->
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">1</div><h2>Dashboard Overview</h2></div>
+<section class="project-section screen-tour" id="screen-tour" aria-labelledby="tour-heading">
+  <div class="project-section-heading">
+    <div><span class="small-label">03 / A LOOK AROUND</span><h2 id="tour-heading">Mission control, in pixels.</h2></div>
+    <span class="handwritten">real screens. real work. &#8600;</span>
+  </div>
+  <p class="tour-intro">Ten views into the team&rsquo;s day. Open any screenshot at full size, or expand a recorded walkthrough to see it in motion.</p>
+  <nav class="tour-index" aria-label="Screens in this tour">
+    <a href="#dashboard">01 Dashboard</a><a href="#work-items">02 Work items</a><a href="#plans">03 Plans &amp; PRD</a>
+    <a href="#pull-requests">04 Pull requests</a><a href="#meetings">05 Meetings</a><a href="#pipelines">06 Pipelines</a>
+    <a href="#knowledge">07 Knowledge</a><a href="#schedules">08 Schedules</a><a href="#engine">09 Engine</a><a href="#command-center">10 Command Center</a>
+  </nav>
+<section class="scenario" id="dashboard" aria-labelledby="dashboard-heading">
+  <div class="scenario-header"><span class="scenario-num">1</span><h3 id="dashboard-heading">Dashboard Overview</h3></div>
   <p>Home page with agent status cards, project bar, setup guidance, and engine state. All agents visible at a glance.</p>
-  <div class="demo-frame">
-    <img src="demo/01-dashboard-overview.png" alt="Dashboard overview with agent cards">
-    <div class="demo-caption">Home page showing Minions Members, project bar, and engine status badge</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>01_dashboard.png</span><a href="demo/01-dashboard-overview.png">Open full size &#8599;</a></div>
+    <img src="demo/01-dashboard-overview.png" alt="Dashboard overview with agent cards" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">Home page showing Minions Members, project bar, and engine status badge</figcaption>
+  </figure>
+  <details class="recording">
+    <summary>Play dashboard walkthrough <span>GIF</span></summary>
+    <div class="recording-content">
+      <img src="demo/01-dashboard-overview.gif" alt="Animated tour of the Minions dashboard and agent status cards" width="1200" height="771" loading="lazy" decoding="async">
+      <p>Collapse to hide the animation. <a href="demo/01-dashboard-overview.gif">Open recording at full size &#8599;</a></p>
+    </div>
+  </details>
+</section>
 
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">2</div><h2>Work Items</h2></div>
+<section class="scenario" id="work-items" aria-labelledby="work-items-heading">
+  <div class="scenario-header"><span class="scenario-num">2</span><h3 id="work-items-heading">Work Items</h3></div>
   <p>Paginated table with status, type, priority, agent, dependencies, artifacts, and linked PRs. <span class="badge badge-yellow">PENDING</span> <span class="badge badge-blue">DISPATCHED</span> <span class="badge badge-green">DONE</span> <span class="badge badge-red">FAILED</span>. Retry, delete, archive, and add feedback with optimistic updates.</p>
-  <div class="demo-frame">
-    <img src="demo/02-work-items.png" alt="Work items table">
-    <div class="demo-caption">Work items page &mdash; 20 per page with create, edit, retry, and delete actions</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>02_work_items.png</span><a href="demo/02-work-items.png">Open full size &#8599;</a></div>
+    <img src="demo/02-work-items.png" alt="Work items table" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">Work items page &mdash; 20 per page with create, edit, retry, and delete actions</figcaption>
+  </figure>
+  <details class="recording">
+    <summary>Play work items walkthrough <span>GIF</span></summary>
+    <div class="recording-content">
+      <img src="demo/03-work-items.gif" alt="Animated walkthrough of managing work items" width="1200" height="771" loading="lazy" decoding="async">
+      <p>Collapse to hide the animation. <a href="demo/03-work-items.gif">Open recording at full size &#8599;</a></p>
+    </div>
+  </details>
+</section>
 
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">3</div><h2>Plans &amp; PRD</h2></div>
+<section class="scenario" id="plans" aria-labelledby="plans-heading">
+  <div class="scenario-header"><span class="scenario-num">3</span><h3 id="plans-heading">Plans &amp; PRD</h3></div>
   <p>Plan cards with Approve / Discuss &amp; Revise / Reject. PRD dependency graph with per-item retry, reopening, verification, and manual archive.</p>
-  <div class="demo-frame">
-    <img src="demo/03-plans-prd.png" alt="Plans and PRD progress">
-    <div class="demo-caption">Plans page with status-colored cards, PRD dependency graph, and action buttons</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>03_plans_prd.png</span><a href="demo/03-plans-prd.png">Open full size &#8599;</a></div>
+    <img src="demo/03-plans-prd.png" alt="Plans and PRD progress" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">Plans page with status-colored cards, PRD dependency graph, and action buttons</figcaption>
+  </figure>
+  <details class="recording">
+    <summary>Play plan &amp; document chat walkthrough <span>GIF</span></summary>
+    <div class="recording-content">
+      <img src="demo/04-plan-docchat.gif" alt="Animated walkthrough of plans and document chat" width="1200" height="771" loading="lazy" decoding="async">
+      <p>Collapse to hide the animation. <a href="demo/04-plan-docchat.gif">Open recording at full size &#8599;</a></p>
+    </div>
+  </details>
+  <details class="recording">
+    <summary>Play PRD progress walkthrough <span>GIF</span></summary>
+    <div class="recording-content">
+      <img src="demo/05-prd-progress.gif" alt="Animated walkthrough of PRD progress and dependencies" width="1200" height="771" loading="lazy" decoding="async">
+      <p>Collapse to hide the animation. <a href="demo/05-prd-progress.gif">Open recording at full size &#8599;</a></p>
+    </div>
+  </details>
+</section>
 
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">4</div><h2>Pull Requests</h2></div>
+<section class="scenario" id="pull-requests" aria-labelledby="pull-requests-heading">
+  <div class="scenario-header"><span class="scenario-num">4</span><h3 id="pull-requests-heading">Pull Requests</h3></div>
   <p>PR tracker sorted by date, with review, build, merge, conflict, and human-comment status. Linked to work items and PRD items. Manual PR linking and context-only observation supported.</p>
-  <div class="demo-frame">
-    <img src="demo/04-pull-requests.png" alt="Pull requests tracker">
-    <div class="demo-caption">PRs sorted newest-first with build status, review status, and agent attribution</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>04_pull_requests.png</span><a href="demo/04-pull-requests.png">Open full size &#8599;</a></div>
+    <img src="demo/04-pull-requests.png" alt="Pull requests tracker" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">PRs sorted newest-first with build status, review status, and agent attribution</figcaption>
+  </figure>
+</section>
 
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">5</div><h2>Team Meetings</h2></div>
+<section class="scenario" id="meetings" aria-labelledby="meetings-heading">
+  <div class="scenario-header"><span class="scenario-num">5</span><h3 id="meetings-heading">Team Meetings</h3></div>
   <p>Multi-agent meetings with 3 rounds: investigate, debate, conclude. Live progress per participant. Create plans from conclusions.</p>
-  <div class="demo-frame">
-    <img src="demo/05-meetings.png" alt="Meetings page">
-    <div class="demo-caption">Meetings with round status badges, participant progress, and archive/delete actions</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>05_meetings.png</span><a href="demo/05-meetings.png">Open full size &#8599;</a></div>
+    <img src="demo/05-meetings.png" alt="Meetings page" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">Meetings with round status badges, participant progress, and archive/delete actions</figcaption>
+  </figure>
+</section>
 
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">6</div><h2>Pipelines</h2></div>
+<section class="scenario" id="pipelines" aria-labelledby="pipelines-heading">
+  <div class="scenario-header"><span class="scenario-num">6</span><h3 id="pipelines-heading">Pipelines</h3></div>
   <p>Multi-stage workflows chaining tasks, meetings, plans, tests, docs, and more. Cron triggers or manual runs. Artifact tracking between stages.</p>
-  <div class="demo-frame">
-    <img src="demo/06-pipelines.png" alt="Pipelines page">
-    <div class="demo-caption">Pipeline cards with stage flow visualization, run history, and progress bars</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>06_pipelines.png</span><a href="demo/06-pipelines.png">Open full size &#8599;</a></div>
+    <img src="demo/06-pipelines.png" alt="Pipelines page" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">Pipeline cards with stage flow visualization, run history, and progress bars</figcaption>
+  </figure>
+</section>
 
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">7</div><h2>Notes &amp; Knowledge Base</h2></div>
+<section class="scenario" id="knowledge" aria-labelledby="knowledge-heading">
+  <div class="scenario-header"><span class="scenario-num">7</span><h3 id="knowledge-heading">Notes &amp; Knowledge Base</h3></div>
   <p>Inbox for agent findings, quick notes, pinned notes, consolidated team notes, and categorized knowledge base. Inline Q&amp;A/editing on documents.</p>
-  <div class="demo-frame">
-    <img src="demo/07-notes-kb.png" alt="Notes and knowledge base">
-    <div class="demo-caption">Notes inbox, team notes, and knowledge base with category tabs and pagination</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>07_notes_kb.png</span><a href="demo/07-notes-kb.png">Open full size &#8599;</a></div>
+    <img src="demo/07-notes-kb.png" alt="Notes and knowledge base" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">Notes inbox, team notes, and knowledge base with category tabs and pagination</figcaption>
+  </figure>
+  <details class="recording">
+    <summary>Play inbox &amp; metrics walkthrough <span>GIF</span></summary>
+    <div class="recording-content">
+      <img src="demo/06-inbox-metrics.gif" alt="Animated walkthrough of the notes inbox and agent metrics" width="1200" height="771" loading="lazy" decoding="async">
+      <p>Collapse to hide the animation. <a href="demo/06-inbox-metrics.gif">Open recording at full size &#8599;</a></p>
+    </div>
+  </details>
+</section>
 
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">8</div><h2>Scheduled Tasks</h2></div>
+<section class="scenario" id="schedules" aria-labelledby="schedules-heading">
+  <div class="scenario-header"><span class="scenario-num">8</span><h3 id="schedules-heading">Scheduled Tasks</h3></div>
   <p>Cron-style recurring work with a visual builder. Schedule work items, tests, docs, plans, asks, meetings, and recurring maintenance.</p>
-  <div class="demo-frame">
-    <img src="demo/08-schedules.png" alt="Schedules page">
-    <div class="demo-caption">Schedule list with cron expressions, last-run times, and enable/disable toggles</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>08_schedules.png</span><a href="demo/08-schedules.png">Open full size &#8599;</a></div>
+    <img src="demo/08-schedules.png" alt="Schedules page" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">Schedule list with cron expressions, last-run times, and enable/disable toggles</figcaption>
+  </figure>
+</section>
 
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">9</div><h2>Engine &amp; Metrics</h2></div>
+<section class="scenario" id="engine" aria-labelledby="engine-heading">
+  <div class="scenario-header"><span class="scenario-num">9</span><h3 id="engine-heading">Engine &amp; Metrics</h3></div>
   <p>Dispatch queue, engine log, agent metrics, token usage, runtime/model data, quality signals, and context pressure. All paginated.</p>
-  <div class="demo-frame">
-    <img src="demo/09-engine.png" alt="Engine page">
-    <div class="demo-caption">Active/pending dispatches, completed history, engine log, and per-agent quality metrics</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>09_engine.png</span><a href="demo/09-engine.png">Open full size &#8599;</a></div>
+    <img src="demo/09-engine.png" alt="Engine page" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">Active/pending dispatches, completed history, engine log, and per-agent quality metrics</figcaption>
+  </figure>
+</section>
 
-<div class="scenario">
-  <div class="scenario-header"><div class="scenario-num">10</div><h2>Command Center</h2></div>
+<section class="scenario" id="command-center" aria-labelledby="command-center-heading">
+  <div class="scenario-header"><span class="scenario-num">10</span><h3 id="command-center-heading">Command Center</h3></div>
   <p>Natural language delegation. CC orchestrates &mdash; agents implement. Sessions persist across refreshes and tabs; actions can create work, notes, plans, watches, PR links, and issues.</p>
-  <div class="demo-frame">
-    <img src="demo/10-command-center.png" alt="Command Center panel">
-    <div class="demo-caption">Command Center side panel with conversation history, action execution, and session indicator</div>
-  </div>
-</div>
+  <figure class="demo-frame">
+    <div class="demo-toolbar"><span>10_command_center.png</span><a href="demo/10-command-center.png">Open full size &#8599;</a></div>
+    <img src="demo/10-command-center.png" alt="Command Center panel" width="1400" height="900" loading="lazy" decoding="async">
+    <figcaption class="demo-caption">Command Center side panel with conversation history, action execution, and session indicator</figcaption>
+  </figure>
+  <details class="recording">
+    <summary>Play Command Center walkthrough <span>GIF</span></summary>
+    <div class="recording-content">
+      <img src="demo/02-command-center.gif" alt="Animated walkthrough of the Command Center conversation panel" width="1200" height="771" loading="lazy" decoding="async">
+      <p>Collapse to hide the animation. <a href="demo/02-command-center.gif">Open recording at full size &#8599;</a></p>
+    </div>
+  </details>
+</section>
+  <a class="tour-return text-link" href="#screen-tour">Back to the screen index &#8593;</a>
+</section>
 
-<!-- Quick Start -->
-<div class="quickstart" id="quickstart">
-  <h2>Quick Start</h2>
-  <pre><span class="comment"># Prerequisites: Node.js 18+, Git, and at least one agent runtime</span>
+<section class="project-section quickstart" id="quickstart" aria-labelledby="quickstart-heading">
+  <div class="project-section-heading">
+    <div><span class="small-label">04 / MAKE IT YOURS</span><h2 id="quickstart-heading">Quick Start</h2></div>
+    <span class="handwritten">just add a project. &#8600;</span>
+  </div>
+  <div class="command-window">
+  <div class="command-title"><span>minions_setup.sh</span><span>TERMINAL / NODE.JS 18+</span></div>
+  <pre tabindex="0" aria-label="Minions installation and usage commands"><code><span class="comment"># Prerequisites: Node.js 18+, Git, and at least one agent runtime</span>
 <span class="comment"># Install Claude Code or GitHub Copilot CLI separately, then install Minions</span>
 npm install -g @yemi33/minions
 
@@ -240,13 +297,27 @@ minions doctor
 minions config set-cli copilot --model gpt-5.4
 
 <span class="comment"># Update to latest</span>
-minions update</pre>
-</div>
+minions update</code></pre>
+  </div>
+</section>
 
-<!-- Architecture -->
-<div class="arch">
-  <h2>Architecture</h2>
-  <pre>
+<section class="project-section arch" id="architecture" aria-labelledby="architecture-heading">
+  <div class="project-section-heading">
+    <div><span class="small-label">05 / UNDER THE HOOD</span><h2 id="architecture-heading">Architecture</h2></div>
+    <span class="handwritten">the pieces fit together.</span>
+  </div>
+  <div class="architecture-layout">
+  <div class="architecture-note">
+    <span class="small-label">THE CENTRAL HUB</span>
+    <h3>One engine.<br>A lot of moving parts.</h3>
+    <p>Work is discovered, agents get their own worktrees, and the dashboard keeps the whole mission in view.</p>
+    <dl>
+      <div><dt>HOME BASE</dt><dd><code>~/.minions/</code></dd></div>
+      <div><dt>DASHBOARD</dt><dd>Port 7331</dd></div>
+      <div><dt>RUNTIMES</dt><dd>Claude Code or GitHub Copilot CLI</dd></div>
+    </dl>
+  </div>
+  <pre tabindex="0" aria-label="Minions architecture diagram"><code>
   +-----------------------------------------------------+
   |                  ~/.minions/ (central hub)          |
   |                                                     |
@@ -267,14 +338,18 @@ minions update</pre>
   |   schedules + watches -- recurring/conditional work |
   |   notes.md + knowledge/ -- team memory and KB       |
   +-----------------------------------------------------+
-  </pre>
-</div>
+  </code></pre>
+  </div>
+</section>
 
-</div>
-<footer>
-  <p>Minions &mdash; built by <a href="https://github.com/yemi33">yemi33</a> &mdash; <a href="https://www.npmjs.com/package/@yemi33/minions">npm</a> &mdash; <a href="https://yemi33.github.io/minions/">Public site</a> &mdash; MIT License &mdash; Claude Code or GitHub Copilot CLI runtime</p>
-</footer>
-
+    <footer class="subpage-footer">
+      <div><b>That&rsquo;s the mission. Meet the rest of the experiments.</b><p>Minions &mdash; built by <a href="https://github.com/yemi33">yemi33</a> &mdash; <a href="https://www.npmjs.com/package/@yemi33/minions">npm</a> &mdash; <a href="https://yemi33.github.io/minions/">Public site</a> &mdash; MIT License &mdash; Claude Code or GitHub Copilot CLI runtime</p></div>
+      <a class="bevel big-bevel" href="../archive.html">&#8592; Experiments</a>
+    </footer>
+  </div>
+  <div class="paint-status"><span>5 agents. One engine. Your call.</span><span>PROJECT FILE / MINIONS</span><span>100%</span></div>
+</article>
+<footer class="paint-desktop-note">a little curiosity, a whole lot of possibility. <span><a href="../index.html">Yemi Shin &copy; 2026 / Back to desktop</a></span></footer>
+</main>
 </body>
 </html>
-

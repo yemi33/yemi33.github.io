@@ -1,0 +1,871 @@
+.paint-minions {
+  --project-purple: #74509f;
+  --project-muted: #686055;
+  --project-line: #c9c1b4;
+  line-height: 1.6;
+}
+
+.paint-minions .subpage-paper {
+  overflow-wrap: anywhere;
+}
+
+.paint-minions [id] {
+  scroll-margin-top: 24px;
+}
+
+.paint-minions .window-decoration {
+  flex-shrink: 0;
+}
+
+.paint-minions .paint-menu {
+  flex-wrap: wrap;
+}
+
+.paint-minions .paint-menu a:hover {
+  text-decoration: underline;
+}
+
+.paint-minions .mission-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 44px;
+  align-items: center;
+  padding: 8px 0 34px;
+}
+
+.paint-minions .subpage-heading {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.paint-minions .subpage-heading h1 {
+  font-size: clamp(52px, 6.7vw, 80px);
+  margin-top: 19px;
+}
+
+.paint-minions .mission-subtitle {
+  display: block;
+  margin-top: 12px;
+  font-size: .53em;
+  letter-spacing: -1.6px;
+  line-height: 1.15;
+}
+
+.paint-minions .hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 23px 0;
+}
+
+.paint-minions .hero-badge,
+.paint-minions .badge {
+  display: inline-block;
+  border: 1px solid #a29987;
+  padding: 5px 8px;
+  font: 10px/1.4 var(--mono);
+}
+
+.paint-minions .green,
+.paint-minions .badge-green {
+  background: #e0efdd;
+  color: #315e3a;
+}
+
+.paint-minions .blue,
+.paint-minions .badge-blue {
+  background: #e4edf9;
+  color: #294d7c;
+}
+
+.paint-minions .yellow,
+.paint-minions .badge-yellow {
+  background: #fff3bd;
+  color: #75520e;
+}
+
+.paint-minions .purple {
+  background: #eee5fc;
+  color: #674386;
+}
+
+.paint-minions .badge-red {
+  background: #fbe3e8;
+  color: #9a354c;
+}
+
+.paint-minions .mission-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 27px;
+}
+
+.paint-minions .mission-actions .big-bevel {
+  background: #eee5fc;
+}
+
+.paint-minions .mission-sketch {
+  position: relative;
+  min-width: 0;
+  padding: 21px 23px 16px;
+  margin: 13px 3px;
+  background-color: #eee5fc;
+  background-image: repeating-linear-gradient(transparent 0 27px, #8c70ac14 27px 28px);
+  border: 1.5px solid var(--ink);
+  border-radius: 3px 10px 5px 3px;
+  box-shadow: 4px 5px 0 var(--ink);
+  transform: rotate(2deg);
+}
+
+.paint-minions .mission-sketch::before {
+  content: "";
+  position: absolute;
+  width: 84px;
+  height: 22px;
+  left: calc(50% - 42px);
+  top: -13px;
+  background: #ffe592df;
+  border-inline: 1px dashed #aa924980;
+  transform: rotate(-6deg);
+}
+
+.paint-minions .sketch-file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed #aa93c2;
+}
+
+.paint-minions .sketch-file .small-label {
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+.paint-minions .crew-doodle {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 24px;
+}
+
+.paint-minions .sketch-caption {
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 3px 0 20px;
+}
+
+.paint-minions .mission-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: workflow;
+}
+
+.paint-minions .mission-flow li {
+  counter-increment: workflow;
+  padding: 8px 3px;
+  background: #fffdf7;
+  border: 1px solid #93809f;
+  text-align: center;
+  font: 11px/1.4 var(--mono);
+}
+
+.paint-minions .mission-flow li::before {
+  content: "0" counter(workflow);
+  display: block;
+  margin-bottom: 4px;
+  color: #7b6988;
+  font-size: 9px;
+}
+
+.paint-minions .mission-flow .human-gate {
+  background: #fff3bd;
+  border: 1.5px solid #9c6726;
+  border-radius: 40% 5% 45% 5%;
+}
+
+.paint-minions .sketch-note {
+  margin: 14px 0 0;
+  color: #674386;
+  text-align: center;
+  font: 11px/1.6 var(--mono);
+}
+
+.paint-minions .sketch-note > span {
+  font-size: 23px;
+  vertical-align: middle;
+}
+
+.paint-minions .project-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 15px 0;
+  border-block: 1px dashed var(--project-line);
+}
+
+.paint-minions .project-tabs > span {
+  margin-right: 8px;
+  font-size: 9px;
+  color: var(--project-muted);
+}
+
+.paint-minions .project-tabs a {
+  background: #f1ede5;
+  padding: 7px 11px;
+  border: 1px solid #b0a797;
+  box-shadow: 2px 2px 0 #d2c9ba;
+  text-decoration: none;
+  font: 10px/1.5 var(--mono);
+}
+
+.paint-minions .project-tabs a:hover,
+.paint-minions .tour-index a:hover {
+  background: #fff3bd;
+}
+
+.paint-minions .project-section {
+  margin-top: 52px;
+}
+
+.paint-minions .project-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 23px;
+}
+
+.paint-minions .project-section-heading .small-label {
+  color: var(--project-purple);
+  font-size: 10px;
+}
+
+.paint-minions .project-section-heading h2 {
+  margin: 8px 0 0;
+  font-size: clamp(25px, 3vw, 33px);
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.paint-minions .project-section-heading > .handwritten {
+  color: var(--project-purple);
+  flex-shrink: 0;
+  font-size: 14px;
+  transform: rotate(-3deg);
+}
+
+.paint-minions .agents-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.paint-minions .agent-pill {
+  position: relative;
+  min-width: 0;
+  padding: 20px 15px 18px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px 7px 3px 3px;
+  background: #eee5fc;
+  box-shadow: 2px 3px 0 var(--ink);
+}
+
+.paint-minions .agent-pill:nth-child(2),
+.paint-minions .agent-pill:nth-child(5) {
+  background: #fff3bd;
+}
+
+.paint-minions .agent-pill:nth-child(3) {
+  background: #fbe3e8;
+}
+
+.paint-minions .agent-pill:nth-child(4) {
+  background: #e0efdd;
+}
+
+.paint-minions .agent-number {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font: 9px var(--mono);
+  color: var(--project-muted);
+}
+
+.paint-minions .emoji {
+  display: block;
+  font-size: 28px;
+  margin: 1px 0 10px;
+}
+
+.paint-minions .name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.paint-minions .role {
+  margin-top: 4px;
+  font: 10px/1.7 var(--mono);
+  color: var(--project-muted);
+}
+
+.paint-minions .features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 26px;
+  counter-reset: feature;
+}
+
+.paint-minions .feature {
+  position: relative;
+  min-width: 0;
+  padding: 20px 0 19px 30px;
+  border-top: 1px dashed var(--project-line);
+  counter-increment: feature;
+}
+
+.paint-minions .feature::before {
+  content: counter(feature, decimal-leading-zero);
+  position: absolute;
+  top: 23px;
+  left: 0;
+  color: var(--project-purple);
+  font: 10px/1.5 var(--mono);
+}
+
+.paint-minions .feature h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.paint-minions .feature p {
+  margin: 0;
+  color: var(--project-muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.paint-minions .feature:last-child {
+  grid-column: 1 / -1;
+  background: #f1ede5;
+  border: 1px solid var(--project-line);
+  padding: 18px 20px 18px 47px;
+}
+
+.paint-minions .feature:last-child::before {
+  left: 15px;
+  top: 21px;
+}
+
+.paint-minions code {
+  font-family: var(--mono);
+  font-size: .95em;
+}
+
+.paint-minions .tour-intro {
+  margin: -5px 0 23px;
+  max-width: 640px;
+  color: var(--project-muted);
+  font-size: 14px;
+}
+
+.paint-minions .tour-index {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: #c9c1b4;
+  border: 1px solid #c9c1b4;
+}
+
+.paint-minions .tour-index a {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  background: #f5f1e8;
+  text-decoration: none;
+  font: 10px/1.6 var(--mono);
+}
+
+.paint-minions .scenario {
+  margin: 34px 0 42px;
+  min-width: 0;
+}
+
+.paint-minions .scenario-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.paint-minions .scenario-num {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: #eee5fc;
+  border: 1.5px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  font: bold 13px var(--mono);
+  flex-shrink: 0;
+  transform: rotate(-4deg);
+}
+
+.paint-minions .scenario:nth-of-type(3n + 2) .scenario-num {
+  background: #fff3bd;
+}
+
+.paint-minions .scenario:nth-of-type(3n) .scenario-num {
+  background: #fbe3e8;
+}
+
+.paint-minions .scenario h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -.5px;
+}
+
+.paint-minions .scenario > p {
+  margin: 15px 0 20px;
+  max-width: 820px;
+  color: var(--project-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.paint-minions .badge {
+  padding: 2px 5px;
+  font-size: 9px;
+  vertical-align: middle;
+}
+
+.paint-minions .demo-frame {
+  min-width: 0;
+  margin: 0;
+  padding: 3px;
+  border: 2px solid;
+  border-color: #ece9e4 #77716a #77716a #ece9e4;
+  background: #c6c6c6;
+  box-shadow: 4px 5px 0 #5044331a;
+}
+
+.paint-minions .demo-toolbar,
+.paint-minions .command-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 18px;
+  padding: 9px 12px;
+  background: #e9e5dc;
+  color: #585044;
+  font: 10px/1.5 var(--mono);
+}
+
+.paint-minions .demo-toolbar a {
+  color: #4c376b;
+}
+
+.paint-minions .demo-frame img,
+.paint-minions .recording img {
+  width: 100%;
+  height: auto;
+  background: #0d1117;
+}
+
+.paint-minions .demo-caption {
+  margin: 0;
+  padding: 12px 14px;
+  background: #faf7ee;
+  border-top: 1px solid #999080;
+  color: var(--project-muted);
+  font: 11px/1.7 var(--mono);
+}
+
+.paint-minions .recording {
+  margin-top: 13px;
+  border: 1px solid #b9adcb;
+  background: #f5effb;
+}
+
+.paint-minions .recording summary {
+  cursor: pointer;
+  padding: 12px 15px;
+  font: 11px/1.8 var(--mono);
+}
+
+.paint-minions .recording summary:hover {
+  background: #eee5fc;
+}
+
+.paint-minions .recording summary:focus-visible {
+  outline: 3px solid #ed4c82;
+  outline-offset: 3px;
+}
+
+.paint-minions .recording summary > span {
+  display: inline-block;
+  background: #e6dbf2;
+  padding: 1px 6px;
+  margin-left: 8px;
+  font-size: 9px;
+}
+
+.paint-minions .recording[open] summary {
+  border-bottom: 1px solid #b9adcb;
+}
+
+.paint-minions .recording-content > p {
+  margin: 0;
+  padding: 13px 15px;
+  font: 10px/1.8 var(--mono);
+  color: #674386;
+}
+
+.paint-minions .recording-content a {
+  display: inline-block;
+}
+
+.paint-minions .tour-return {
+  display: inline-block;
+  color: var(--project-purple);
+}
+
+.paint-minions .command-window {
+  border: 2px solid;
+  border-color: #dfdbd4 #746b60 #746b60 #dfdbd4;
+  padding: 3px;
+  background: #c6c6c6;
+  box-shadow: 4px 5px 0 #5044331a;
+}
+
+.paint-minions .command-title {
+  background: #e4d6f5;
+  color: #4b3762;
+}
+
+.paint-minions .command-title > span:last-child {
+  font-size: 9px;
+}
+
+/* Screens retain their original colors; code scrolls within its own window. */
+.paint-minions pre {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+  tab-size: 2;
+}
+
+.paint-minions .quickstart pre {
+  margin: 0;
+  padding: 25px;
+  background: #282532;
+  color: #d8efbb;
+  font: 13px/1.9 var(--mono);
+  color-scheme: dark;
+}
+
+.paint-minions .quickstart pre .comment {
+  color: #c3bbd0;
+}
+
+.paint-minions .architecture-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 23px;
+  align-items: start;
+}
+
+.paint-minions .architecture-note {
+  padding: 23px;
+  border: 1px solid #b3a37c;
+  background: #fff3bd;
+  border-radius: 4px 7px 3px 3px;
+  box-shadow: 3px 4px 0 #ae955a33;
+}
+
+.paint-minions .architecture-note > .small-label {
+  font-size: 9px;
+  color: #775b28;
+}
+
+.paint-minions .architecture-note h3 {
+  margin: 12px 0;
+  font-size: 23px;
+  line-height: 1.3;
+  letter-spacing: -.7px;
+}
+
+.paint-minions .architecture-note p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.paint-minions .architecture-note dl {
+  margin: 21px 0 0;
+}
+
+.paint-minions .architecture-note dl > div {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed #bca875;
+}
+
+.paint-minions .architecture-note dt {
+  color: #775b28;
+  font: 9px/1.5 var(--mono);
+}
+
+.paint-minions .architecture-note dd {
+  margin: 5px 0 0;
+  font-size: 12px;
+}
+
+.paint-minions .arch pre {
+  margin: 0;
+  padding: 19px 14px;
+  background-color: #f2eee4;
+  background-image: radial-gradient(#b5a99350 .6px, transparent .6px);
+  background-size: 7px 7px;
+  border: 1px solid #b5aa95;
+  color: #4e4160;
+  font: 12px/1.8 var(--mono);
+}
+
+.paint-minions .subpage-footer {
+  margin-top: 54px;
+  margin-bottom: 6px;
+}
+
+.paint-minions .subpage-footer > div {
+  min-width: 0;
+}
+
+.paint-minions .subpage-footer a:hover {
+  color: var(--project-purple);
+}
+
+.paint-minions .paint-status {
+  padding-top: 4px;
+}
+
+@media (max-width: 1000px) {
+  .paint-minions .mission-hero {
+    gap: 27px;
+  }
+
+  .paint-minions .mission-sketch {
+    padding-inline: 16px;
+  }
+
+  .paint-minions .features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .paint-minions .architecture-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .paint-minions .architecture-note dl {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .paint-minions .arch pre {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 760px) {
+  .paint-minions .mission-hero {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .paint-minions .mission-sketch {
+    width: min(100% - 10px, 380px);
+    justify-self: center;
+    padding-inline: 22px;
+  }
+
+  .paint-minions .agents-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .paint-minions .project-section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .paint-minions .tour-index {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .paint-minions .subpage-footer {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 480px) {
+  .paint-minions .window-title {
+    gap: 6px;
+  }
+
+  .paint-minions .window-title > span:first-child {
+    font-size: 8px;
+    gap: 4px;
+  }
+
+  .paint-minions .window-title .small-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .paint-minions .paint-menu {
+    justify-content: space-between;
+    gap: 10px 12px;
+    padding: 12px 8px;
+    font-size: 9px;
+  }
+
+  .paint-minions .paint-menu > span {
+    display: none;
+  }
+
+  .paint-minions .subpage-breadcrumb {
+    gap: 8px;
+    font-size: 9px;
+    margin-bottom: 25px;
+  }
+
+  .paint-minions .subpage-heading > .small-label {
+    font-size: 9px;
+  }
+
+  .paint-minions .subpage-heading h1 {
+    font-size: 52px;
+    letter-spacing: -2.5px;
+  }
+
+  .paint-minions .subpage-heading > p {
+    font-size: 14px;
+  }
+
+  .paint-minions .mission-sketch {
+    padding: 20px 13px 16px;
+    transform: none;
+  }
+
+  .paint-minions .sketch-caption {
+    font-size: 15px;
+  }
+
+  .paint-minions .mission-flow li {
+    font-size: 10px;
+  }
+
+  .paint-minions .mission-actions {
+    gap: 19px;
+  }
+
+  .paint-minions .project-tabs > span {
+    width: 100%;
+  }
+
+  .paint-minions .project-tabs a {
+    padding: 8px;
+    font-size: 9px;
+  }
+
+  .paint-minions .project-section {
+    margin-top: 39px;
+  }
+
+  .paint-minions .project-section-heading h2 {
+    font-size: 25px;
+  }
+
+  .paint-minions .agents-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .paint-minions .agent-pill {
+    padding: 18px 12px 14px;
+  }
+
+  .paint-minions .agent-pill:last-child {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .paint-minions .agent-pill:last-child .emoji {
+    margin: 0;
+  }
+
+  .paint-minions .features {
+    grid-template-columns: 1fr;
+  }
+
+  .paint-minions .feature {
+    padding-block: 18px;
+  }
+
+  .paint-minions .scenario {
+    margin-block: 29px 36px;
+  }
+
+  .paint-minions .scenario h3 {
+    font-size: 20px;
+  }
+
+  .paint-minions .demo-toolbar {
+    padding: 9px;
+    font-size: 9px;
+  }
+
+  .paint-minions .demo-caption {
+    padding: 11px 10px;
+    font-size: 10px;
+  }
+
+  .paint-minions .recording summary {
+    padding: 11px;
+    font-size: 10px;
+  }
+
+  .paint-minions .quickstart pre {
+    padding: 18px 14px;
+    font-size: 12px;
+  }
+
+  .paint-minions .architecture-note {
+    padding: 20px;
+  }
+
+  .paint-minions .architecture-note dl {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
